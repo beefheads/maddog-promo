@@ -1,0 +1,31 @@
+:root {
+  --tr: 0.3s;
+  --tr-regular: all var(--tr) ease;
+
+  // Colors
+  --c-primary: #F6A6A3;
+
+  --c-second: #7FC4E1;
+  --c-second--light: #8BC8E3;
+  --c-second--dark: #64AAC9;
+
+  --fg-regular: #2F3C4F;
+  --fg-second: #848483;
+  --fg-third: #ababab;
+  --fg-title: #5B5B5B;
+  --fg-primary: #565656;
+
+  --fg-on: #fff;
+  --fg-card-title: #444;
+  --fg-card-text-second: #c7c7c7;
+
+  --c-error: #E5042C;
+  --c-success: #34C759;
+  --c-border: #eee;
+
+  // BGs
+  --bg-app: #fff;
+  --bg-card: #fff;
+  --bg-primary: #FAF2EB;
+  --bg-second: #F9FBFF;
+}

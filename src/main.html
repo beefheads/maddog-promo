@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main">
+
+        <section class="section showcase">
+          <div class="container showcase__container">
+            <div class="runway showcase__runway">
+              <div class="runway__shaft">
+                <div class="runway__lift">
+                  @@include('tpls/mdg/showcase-card.html',{
+                    className: 'showcase-card--citrus',
+                    title: 'Citrus',
+                    desc: 'Высококачественный спирт класса «Белальфа» соединяется с чистейшей водой и ярким ароматом цитрусовых вMad Dog Vodka CiTrust. Напиток имеет сбалансированный вкус и приятное свежее послевкусие. Подходит для тех, кто стремится<br>к открытиям, ценит небанальные и смелые решения.<br>Mad Dog Vodka CiTrus в чистом виде станет отличным дополнением к закускам из морепродуктов, <br>а в праздничные коктейли добавит насыщенных нот апельсина, лимона и лайма.',
+                    img: 'citrus',
+                  })
+                  @@include('tpls/mdg/showcase-card.html',{
+                    className: 'showcase-card--berry',
+                    title: 'C*Berry',
+                    desc: 'Гармония чистой воды, спирта высочайшего качества и яркого аромата спелых ягод воплотилась в Mad Dog Vodka C*berry. Вкус напитка универсален: подходит к любым поводам от уютных домашних посиделок до шумных мальчишников и девичников. Богатое клюквенное послевкусие придает напитку глубину и питкость.<br>Водка сочетается с цитрусовыми соками, тониками <br> и лаймом, поэтому может стать отличной базой для уникальных авторских коктейлей.',
+                    img: 'berry',
+                  })
+                  @@include('tpls/mdg/showcase-card.html',{
+                    className: 'showcase-card--raw',
+                    title: 'Raw',
+                    desc: 'Гармония чистой воды, спирта высочайшего качества и яркого аромата спелых ягод воплотилась в Mad Dog Vodka C*berry. Вкус напитка универсален: подходит к любым поводам от уютных домашних посиделок до шумных мальчишников и девичников. Богатое клюквенное послевкусие придает напитку глубину и питкость.<br>Водка сочетается с цитрусовыми соками, тониками<br>и лаймом, поэтому может стать отличной базой для уникальных авторских коктейлей.',
+                    img: 'raw',
+                  })
+                  @@include('tpls/mdg/showcase-card.html',{
+                    className: 'showcase-card--mango',
+                    title: 'Mango',
+                    desc: 'Гармония чистой воды, спирта высочайшего качества и яркого аромата спелых ягод воплотилась в Mad Dog Vodka C*berry. Вкус напитка универсален: подходит к любым поводам от уютных домашних посиделок до шумных мальчишников и девичников. Богатое клюквенное послевкусие придает напитку глубину и питкость.<br>Водка сочетается с цитрусовыми соками, тониками<br>и лаймом, поэтому может стать отличной базой для уникальных авторских коктейлей.',
+                    img: 'mango',
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase__drop"></div>
+        </section>
+
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.header__container {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.header__nav-icon {
+  --size: 2.8rem;
+  max-width: var(--size);
+  min-width: var(--size);
+  width: var(--size);
+  height: var(--size);
+  display: block;
+}
+
+.header__logo {
+  margin-left: 7rem;
+}
