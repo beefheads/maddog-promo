@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	})
 
 	function initShowcase(showcase) {
+		if (showcase.classList.contains('product__related')) return;
+		
 		const cards = [...showcase.querySelectorAll('.showcase-card')];
 
 		let cardsHeights = cards.map((currentCard) => {
@@ -27,7 +29,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				if (!showcase.classList.contains(SHOWCASE_CLASSES.sectionHasOpened)) {
 					showcase.classList.add(SHOWCASE_CLASSES.sectionHasOpened);
 				}
-				showcase.dataset.name = currentCard.dataset.name;
+				showcase.dataset.theme = currentCard.dataset.theme;
 
 				currentCard.classList.add(SHOWCASE_CLASSES.cardCurrent);
 				cards.forEach(card => {

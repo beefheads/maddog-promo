@@ -52,6 +52,10 @@
 	}
 }
 
+.product__related .runway__lift {
+	justify-content: flex-end;
+}
+
 .runway__lift::after {
 	@media (max-width: $tablet) {
 		content: "";

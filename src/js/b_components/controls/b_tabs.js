@@ -6,11 +6,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
  * Табы инициируются все
  * У какой кнопки таба есть класс из js переменной TAB_ACTIVE_CLASS, тот таб и будет активным сразу
  *
- * .tabs>.tabs__toggler-container>button.tabs__toggler*2^.tabs__page-container>.tabs__page*2
+ * .b_tabs>.b_tabs-button-wrap>button.b_tabs-button*2^.b_tabs-page-wrap>.b_tabs__page*2
  *
  */
-const tabsBars = document.querySelectorAll(".b_tabs-switchers");
-const tabsPagesWraps = document.querySelectorAll(".b_tabs-pages");
+const tabsBars = document.querySelectorAll(".b_tabs-button-wrap");
+const tabsPagesWraps = document.querySelectorAll(".b_tabs-page-wrap");
 const TAB_ACTIVE_CLASS = "active";
 const TAB_ANIMATED_CLASS = "tab--animated";
 

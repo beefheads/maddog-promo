@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main" data-theme="raw">
+        @@include('tpls/mdg/section-product.html', {
+          model: 'raw',
+          desc: 'Mad Dog Vodka RAW — это сочетание стиля, непосредственности и классики в одном напитке. Водка высокого качества станет идеальной основой для множества коктейлей. Чистейшая вода и 100% зерновой спирт формируют мягкость напитка, поэтому он также прекрасно подойдет для употребления в чистом виде со льдом. Mad Dog Vodka RAW идеальна для больших вечеринок, где каждый может выбрать для себя подходящий вариант.',
+          img: 'raw',
+          hide_ice: true,
+        })
+
+        @@include('tpls/mdg/drop.html', {})
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>
