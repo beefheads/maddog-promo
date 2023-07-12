@@ -299,14 +299,17 @@
 
 */
 .button-paper {
+  // --button-bg: 
+  --button-fg: #462A04;
+
   display: inline-block;
   position: relative;
   padding-top: 2.8rem;
   padding-bottom: 2.8rem;
   padding-left: 6.4rem;
   padding-right: 6.4rem;
-  color: #462A04;
-  font-family: Intro Demo;
+  color: var(--button-fg);
+  font-family: 'Intro Demo';
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 900;
@@ -323,10 +326,20 @@
 }
 
 .button-paper .button__text {
+  display: inline-block;
+  color: inherit;
   position: relative;
   z-index: 2;
   transition: inherit;
+  font-size: inherit;
 }
+
+.button-paper:hover .button__text {
+  @media (any-hover:hover) {
+    transform: scale(1.1);
+  }
+}
+
 .button__bg {
   content: "";
   position: absolute;

@@ -63,4 +63,12 @@ $w-burger: $tablet;
   // @media (max-width: $tablet) {
   //   --w-container: 100%;
   // }
+
+  --z-above-header: 103;
+  --z-burger: 102;
+  --z-header: 100;
+  --z-main: 99;
+  --z-footer: 100;
+
+  --tr-jolly-enter: cubic-bezier(0.5, 0, 0.5, 1);
 }

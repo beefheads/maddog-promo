@@ -86,6 +86,7 @@ function mediaMin(value) {
  * @param {Тайминг} time Время перерыва между сраабатыванием функции
  * @returns void
  */
+/*
 export const debounce = function (fn, time) {
   if (!fn && !time) return;
   let timeout;
@@ -97,6 +98,16 @@ export const debounce = function (fn, time) {
     };
     clearTimeout(timeout);
     timeout = setTimeout(functionCall, time);
+  };
+};
+*/
+export const debounce = (callback, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      callback.apply(null, args);
+    }, delay);
   };
 };
 

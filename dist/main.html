@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20230712105035">
+    <link rel="stylesheet" href="./css/style.css?_v=20230712130435">
 
     <!-- Отключить автодетект телефонов -->
     <meta name="format-detection" content="telephone=no">
@@ -218,7 +218,11 @@
               </div>
             </div>
           </div>
-          <div class="showcase__drop"></div>
+          <div class="showcase__drop-wrap">
+            <div class="showcase__drop-inner">
+              <div class="showcase__drop"></div>
+            </div>
+          </div>
         </section>
 
       </main>
@@ -239,8 +243,37 @@
 
     </div>
 
-    
+    <section class="age-check">
+	<div class="age-check__inner">
+		<div class="age-check__glow"></div>
+		<div class="age-check__blinks"></div>
+	  <div class="container age-check__container">
+	  	<div class="age-check__logo">
+	  		<picture class="age-check__logo-pic">
+	  			<img src="./img/common/logo.svg" alt="maddog.by" class="age-check__logo-img">
+	  		</picture>
+	  	</div>
+	    <h2 class="section-title age-check__title">вам есть 18 лет?</h2>
+	    <div class="section__buttons-lr age-check__buttons">
+	    	<button class="age-check__button age-check__button-accept button-paper">
+	    		<span class="button__text">да</span>
+	    		<span class="button__bg"></span>
+		    </button>
+		    	<button class="age-check__button age-check__button-reject button-paper">
+		    		<span class="button__text">нет</span>
+		    		<span class="button__bg"></span>
+		    </button>
+	    </div>
+	    
+	    <div class="age-check__legal-media">
+	      <picture class="age-check__legal-media-pic">
+	      	<img src="./img/common/caution.png" alt="" class="age-check__legal-media-img">
+	      </picture>
+	    </div>
+	  </div>
+  </div>
+</section>
 
-    <script src="./js/index.min.js?_v=20230712105035"></script>
+    <script src="./js/index.min.js?_v=20230712130435"></script>
   </body>
 </html>

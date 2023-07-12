@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 11;
+  z-index: var(--z-header);
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -135,20 +135,6 @@ body:not(._lock) .header--hidden {
 .header__nav-item:nth-last-child(2) {
   margin-left: auto;
   margin-right: 4rem;
-}
-
-
-.header__nav-item--active:after {
-  content: "";
-  position: absolute;
-  top: 63%;
-  left: -10%;
-  right: -10%;
-  display: block;
-  width: 120%;
-  height: 0.1rem;
-  transform: rotate(-3.075deg);
-  background-color: #005EAA;
 }
 
 .header__nav-link {

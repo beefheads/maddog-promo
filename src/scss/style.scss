@@ -63,7 +63,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.2;
   overscroll-behavior: none;
-  background-color: #E6E6E6;
+  background-color: var(--bg-app);
   background-image: url("../img/common/body-bg.jpg");
 
   @media (max-width: $tablet) and (min-width: $mobile-xl + 1) {

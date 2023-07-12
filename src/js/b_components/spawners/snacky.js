@@ -8,8 +8,9 @@ class snackMaker {
 
   visibleClass = 'snacky--visible';
 
-  constructor(message, container, removeAfter = 5000) {
+  constructor(message, container = document.body, removeAfter = 5000) {
     const snack = this.createSnack(message);
+    snack.removeSnack = () => this.removeSnack(snack);
     this.spawnSnack(snack, container);
     this.removeSnack(snack, removeAfter);
   }
