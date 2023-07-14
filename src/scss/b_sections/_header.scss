@@ -145,7 +145,7 @@ body:not(._lock) .header--hidden {
   position: relative;
   transition: var(--tr-regular);
   color: #005EAA;
-  font-family: 'Intro Demo';
+  font-family: var(--ff-title);
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 900;

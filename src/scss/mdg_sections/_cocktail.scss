@@ -90,7 +90,7 @@
 
 .cocktail__title {
 	color: var(--fg);
-	font-family: 'Intro Demo';
+	font-family: var(--ff-title);
 	font-size: 6.4rem;
 	font-style: normal;
 	font-weight: 900;
@@ -113,14 +113,14 @@
 }
 
 .cocktail__title-model {
-	font-family: 'Intro Demo Cond';
+	font-family: var(--ff-subtitle);
 	font-weight: 300;
 }
 
 .cocktail__desc {
 	max-width: 85.3rem;
 	color: var(--fg);
-	font-family: 'Intro Book';
+	font-family: var(--ff-regular);
 	font-size: 1.6rem;
 	font-style: normal;
 	font-weight: 400;
@@ -145,7 +145,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	color: var(--fg);
-	font-family: 'Intro Demo Cond';
+	font-family: var(--ff-subtitle);
 	font-size: 2.4rem;
 	font-style: normal;
 	font-weight: 300;
@@ -161,7 +161,7 @@
 
 .cocktail__stat-value {
 	font-weight: 900;
-	font-family: 'Intro Demo';
+	font-family: var(--ff-title);
 }
 
 .cocktail__hero {
@@ -170,7 +170,7 @@
 
 .cocktail__hero-name {
 	color: var(--fg-active);
-	font-family: 'Intro Demo';
+	font-family: var(--ff-title);
 	font-size: 12.8rem;
 	font-style: normal;
 	font-weight: 900;

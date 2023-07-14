@@ -130,7 +130,7 @@
 	top: 0;
 	z-index: 2;
 	color: var(--fg-active);
-	font-family: 'Intro Demo';
+	font-family: var(--ff-title);
 	font-size: 9.6rem;
 	font-style: normal;
 	font-weight: 900;
@@ -250,7 +250,7 @@
 
 .showcase-card__title {
 	color: var(--fg);
-	font-family: 'Intro Demo Cond';
+	font-family: var(--ff-subtitle);
 	font-size: 5rem;
 	font-style: normal;
 	font-weight: 900;

@@ -7,8 +7,9 @@
   --regular-column-left: 93.3rem;
   --regular-column-right: 64.4rem;
   --regular-columns: var(--regular-column-left) var(--regular-column-right);
-  --ff-regular: "DinRoundPro", sans-serif;
-  --ff-title: "DinPro", sans-serif;
+  --ff-regular: "Intro Book", sans-serif;
+  --ff-title: "Intro Demo", sans-serif;
+  --ff-subtitle: "Intro Demo Cond", sans-serif;
   --p-container: 7rem;
   --w-container: 100%;
   --z-above-header: 103;
@@ -4072,7 +4073,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   padding-left: 6.4rem;
   padding-right: 6.4rem;
   color: var(--button-fg);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 900;
@@ -4444,7 +4445,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   top: 0;
   z-index: 2;
   color: var(--fg-active);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 9.6rem;
   font-style: normal;
   font-weight: 900;
@@ -4573,7 +4574,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .showcase-card__title {
   color: var(--fg);
-  font-family: "Intro Demo Cond";
+  font-family: var(--ff-subtitle);
   font-size: 5rem;
   font-style: normal;
   font-weight: 900;
@@ -4990,7 +4991,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .age-check__title {
   color: var(--fg-on);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 6.4rem;
   font-style: normal;
   font-weight: 900;
@@ -5198,7 +5199,7 @@ body:not(._lock) .header--hidden {
   position: relative;
   transition: var(--tr-regular);
   color: #005EAA;
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 900;
@@ -5447,7 +5448,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 .footer__legal-credits {
   color: #005EAA;
   display: grid;
-  font-family: "Intro Book", sans-serif;
+  font-family: var(--ff-regular), sans-serif;
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
@@ -5618,7 +5619,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 
 .product__title {
   color: var(--fg);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 6.4rem;
   font-style: normal;
   font-weight: 900;
@@ -5634,14 +5635,14 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 }
 
 .product__title-model {
-  font-family: "Intro Demo Cond";
+  font-family: var(--ff-subtitle);
   font-weight: 300;
 }
 
 .product__desc {
   max-width: 85.3rem;
   color: var(--fg);
-  font-family: "Intro Book";
+  font-family: var(--ff-regular);
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -5664,7 +5665,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
   justify-content: flex-start;
   align-items: center;
   color: var(--fg);
-  font-family: "Intro Demo Cond";
+  font-family: var(--ff-subtitle);
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 300;
@@ -5679,7 +5680,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 
 .product__stat-value {
   font-weight: 900;
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
 }
 
 .product__hero {
@@ -5688,7 +5689,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 
 .product__hero-name {
   color: var(--fg-active);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 12.8rem;
   font-style: normal;
   font-weight: 900;
@@ -5931,7 +5932,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 
 .cocktail__title {
   color: var(--fg);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 6.4rem;
   font-style: normal;
   font-weight: 900;
@@ -5956,14 +5957,14 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 }
 
 .cocktail__title-model {
-  font-family: "Intro Demo Cond";
+  font-family: var(--ff-subtitle);
   font-weight: 300;
 }
 
 .cocktail__desc {
   max-width: 85.3rem;
   color: var(--fg);
-  font-family: "Intro Book";
+  font-family: var(--ff-regular);
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -5990,7 +5991,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
   justify-content: flex-start;
   align-items: center;
   color: var(--fg);
-  font-family: "Intro Demo Cond";
+  font-family: var(--ff-subtitle);
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 300;
@@ -6005,7 +6006,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 
 .cocktail__stat-value {
   font-weight: 900;
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
 }
 
 .cocktail__hero {
@@ -6014,7 +6015,7 @@ body:not(.page-home) .header__nav-item--active .header__nav-link:after {
 
 .cocktail__hero-name {
   color: var(--fg-active);
-  font-family: "Intro Demo";
+  font-family: var(--ff-title);
   font-size: 12.8rem;
   font-style: normal;
   font-weight: 900;
