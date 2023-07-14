@@ -68,6 +68,10 @@
 
 .product__related .runway__lift {
 	justify-content: flex-end;
+
+	@media (max-width: $mobile-xl) {
+		justify-content: flex-start;
+	}
 }
 
 .runway__lift::after {

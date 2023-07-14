@@ -11,7 +11,7 @@
 @include font('Intro Demo Cond', normal, 300, '../resources/fonts/introdemo/introdemocond-lightcaps');
 @include font('Intro Demo Cond', normal, 900, '../resources/fonts/introdemo/introdemocond-blackcaps');
 
-@include font('Intro', normal, 400, '../resources/fonts/intro/intro-book');
+@include font('Intro Book', normal, 400, '../resources/fonts/intro/intro-book');
 
 // Сброс CSS
 @import "./reset";
