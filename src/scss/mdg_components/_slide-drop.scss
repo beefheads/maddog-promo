@@ -1,0 +1,131 @@
+.slide-drop {
+	--drop-color: #fff;
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	transition: all 0.4s;
+  display: grid;
+	grid-template-rows: 0fr;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 5;
+}	
+
+[data-theme="citrus"] .slide-drop {
+	--drop-color: #F4D372;
+}
+[data-theme="citrus"] .slide-drop--enter {
+	--drop-color: #FFB709
+}
+
+[data-theme="berry"] .slide-drop {
+	--drop-color: #FFA9BE;
+}
+[data-theme="berry"] .slide-drop--enter {
+	--drop-color: #FF6588;
+}
+
+[data-theme="raw"] .slide-drop {
+	--drop-color: #7FC8EC;
+}
+[data-theme="raw"] .slide-drop--enter {
+	--drop-color: #36ABFF;
+}
+
+[data-theme="mango"] .slide-drop {
+	--drop-color: #F0BC70;
+}
+[data-theme="mango"] .slide-drop--enter {
+	--drop-color: #FFA530;
+}
+
+.slide-drop--active {
+	grid-template-rows: 1fr;
+	position: fixed;
+}
+
+.slide-drop__inner {
+	position: relative;
+	min-height: 4.2rem;
+}
+
+.slide-drop__content {
+	// --drop-mask: url('../img/common/drop.svg', cover);
+	--drop-height: 4.2rem;
+	
+	@include mask(var(--drop-mask));
+	background-color: var(--drop-color);
+	// max-width: 3rem;
+	max-width: 4.2rem;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: #{'calc(0rem - var(--drop-height))'};
+	 -webkit-border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  transform: rotateZ(-45deg);
+
+	position: absolute;
+  // bottom: 34rem;
+  // bottom: -30px	;
+	top: 105vh;
+  left: 0;
+  right: 0;
+  transition: all 1.3s ease-in-out;
+	min-height: var(--drop-height);
+	// height: 100%;
+	height: var(--drop-height);
+}
+
+.slide-drop__glow,
+.slide-drop__blink,
+.slide-drop__paper {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	opacity: 0;
+	transition: 0.3s;
+}
+.slide-drop__glow {
+	// background-image: url('../img/common/glow.png');
+}
+.slide-drop__blink {
+	background-image: url('../img/common/blinks.png');
+	mix-blend-mode: screen;
+}
+.slide-drop__paper {
+	background-image: url('../img/common/paper.png');
+}
+
+.slide-drop--enter .slide-drop__content {
+	// max-width: 100%;
+  // transform: rotateZ(-45deg) scale(100);
+  transform: rotateZ(-45deg) scale(70);
+	bottom: 0;
+	top: 0;
+}
+
+.slide-drop--active .slide-drop__content {
+	transition: none;
+	max-width: 100%;
+	height: 120%;
+	transform: none;
+	border-radius: 0;
+}
+.slide-drop--active .slide-drop__glow,
+.slide-drop--active .slide-drop__paper {
+	opacity: 0.35;
+}
+.slide-drop--active .slide-drop__blink {
+	opacity: 0.8;
+	opacity: 1;
+}

@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				if (!showcase.classList.contains(SHOWCASE_CLASSES.sectionHasOpened)) {
 					showcase.classList.add(SHOWCASE_CLASSES.sectionHasOpened);
 				}
+				document.body.dataset.theme = currentCard.dataset.theme;
 				showcase.dataset.theme = currentCard.dataset.theme;
 
 				currentCard.classList.add(SHOWCASE_CLASSES.cardCurrent);

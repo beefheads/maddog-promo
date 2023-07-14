@@ -11,11 +11,11 @@
     <meta name="format-detection" content="telephone=no">
 
   </head>
-  <body>
+  <body data-theme="citrus">
     <div class="wrapper">
       @@include('tpls/header.html',{})
 
-      <main class="main" data-theme="citrus">
+      <main class="main">
 
         @@include('tpls/mdg/section-product.html', {
           model: 'Citrus',
@@ -23,7 +23,7 @@
           img: 'citrus',
         })
 
-        @@include('tpls/mdg/drop.html', {})
+        @@include('tpls/mdg/drop-active.html', {})
       </main>
 
       @@include('tpls/footer.html',{})

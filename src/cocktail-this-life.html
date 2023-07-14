@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body data-theme="mango">
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main">
+        @@include('tpls/mdg/section-cocktail.html', {
+          model: 'Такая лайф',
+          volume: [
+            '40 мл',
+            '25 мл',
+            '15 мл',
+            '10мл',
+            '',
+          ],
+          ingridients: [
+            'водка Mad Dog Mango + чили',
+            'сок лайма',
+            'сироп манго',
+            'пюре манго',
+            'лёд',
+          ],
+          steps: [
+            'Сделать настойку водки Mad Dog Манго с перцем чили, из расчета 1/2 стручка на 500 мл водки.',
+            'Взбить все ингредиенты в шейкере, перелить в охлажденный бокал со льдом.',
+            'Украсить крастой из соли и специй',
+          ],
+          img: 'this-life',
+          theme: 'mango',
+        })
+
+        @@include('tpls/mdg/drop-active.html', {})
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

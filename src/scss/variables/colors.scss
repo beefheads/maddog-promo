@@ -29,3 +29,43 @@
   --bg-primary: #FAF2EB;
   --bg-second: #F9FBFF;
 }
+
+[data-theme="citrus"] {
+  --c-accent: #F4D372;
+  --c-active: #FFB709;
+
+  --bg-card: #EEC761;
+  --fg-active: #FFE29D;
+  --fg: #462A04;
+  --button-bg: url("../img/common/button-on-yellow.png");
+}
+
+[data-theme="berry"] {
+  --c-accent: #FFA9BE;
+  --c-active: #FF6588;
+
+  --bg-card: #EEC761;
+  --fg-active: #FFD9E2;
+  --fg: #462A04;
+  --button-bg: url("../img/common/button-on-yellow.png");
+}
+
+[data-theme="raw"] {
+  --c-accent: #7FC8EC;
+  --c-active: #36ABFF;
+
+  --bg-card: #7FC8EC;
+  --fg-active: #E2F3FF;
+  --fg: #23005C;
+  --button-bg: url("../img/common/button-on-cyan.png");
+}
+
+[data-theme="mango"] {
+  --c-accent: #F0BC70;
+  --c-active: #FFA530;
+
+  --bg-card: #F0BC70;
+  --fg-active: #FFE09F;
+  --fg: #5C0000;
+  --button-bg: url("../img/common/button-on-mango.png");
+}

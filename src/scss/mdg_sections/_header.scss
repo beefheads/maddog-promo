@@ -3,20 +3,32 @@
 	padding-bottom: 3rem;
 }
 
+.logo__img {
+  --icon-color: var(--fg);
+}
+
 .header__nav-icon {
   --size: 2.8rem;
+  --icon-color: var(--fg);
   max-width: var(--size);
   min-width: var(--size);
   width: var(--size);
   height: var(--size);
   display: block;
+  transition: all 0.3s ease;
+}
+
+.header__nav-icon:hover {
+  @media (any-hover:hover) {
+    --icon-color: var(--fg-active, var(--c-second));
+  }
 }
 
 .header__logo {
   margin-left: 7rem;
 }
 
-.header__nav-item--active:after {
+.header__nav-item--active .header__nav-link:after {
   content: "";
   position: absolute;
   top: 63%;
@@ -26,5 +38,10 @@
   width: 120%;
   height: 0.1rem;
   transform: rotate(-3.075deg);
-  background-color: #005EAA;
+  background-color: var(--fg, #005EAA);
+}
+.header__nav-item--active:hover .header__nav-link:after {
+  @media (any-hover:hover) {
+    background-color: var(--fg-active, var(--c-second));
+  }
 }

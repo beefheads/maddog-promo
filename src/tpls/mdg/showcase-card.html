@@ -37,7 +37,9 @@
       </div>
     }
   </div>
-  <div class="showcase-card__footer">
-    <div class="showcase-card__drop"></div>
-  </div>
+  @@if (typeof desc != 'undefined') {
+    <div class="showcase-card__footer">
+      <div class="showcase-card__drop"></div>
+    </div>
+  }
 </article>

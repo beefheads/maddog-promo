@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body data-theme="raw">
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main">
+        @@include('tpls/mdg/section-cocktail.html', {
+          model: 'Кайпироска',
+          volume: [
+            '40 мл',
+            '25 мл',
+            '15 мл',
+            '',
+          ],
+          ingridients: [
+            'водка Mad Dog',
+            'сок лайма',
+            'сахарный сироп',
+            'лёд',
+          ],
+          steps: [
+            'Смешать все ингредиенты в бокале с дробленым льдом.',
+            'Украсить долькой сочного лайма.',
+          ],
+          img: 'kaipiroska',
+          theme: 'raw',
+          hide_ice: true,
+        })
+
+        @@include('tpls/mdg/drop-active.html', {})
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

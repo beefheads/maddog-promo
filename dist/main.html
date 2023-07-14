@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20230712191509">
+    <link rel="stylesheet" href="./css/style.css?_v=20230714085608">
 
     <!-- Отключить автодетект телефонов -->
     <meta name="format-detection" content="telephone=no">
@@ -16,7 +16,10 @@
       <header class="header">
   <div class="container header__container">
     <a href="#" class="header__logo logo">
-      <img src="./img/common/header-logo.svg" alt="maddog.by" class="logo__img">
+      <!-- <img src="./img/common/header-logo.svg" alt="maddog.by" class="logo__img"> -->
+      <svg class="logo__img">
+        <use href="./img/common/header-logo.svg#header-logo">
+      </svg>
     </a>
     <div class="header__menu">
       <nav class="nav header__nav">
@@ -93,9 +96,11 @@
       </div>
     
   </div>
-  <div class="showcase-card__footer">
-    <div class="showcase-card__drop"></div>
-  </div>
+  
+    <div class="showcase-card__footer">
+      <div class="showcase-card__drop"></div>
+    </div>
+  
 </article>
 
                   <article class="showcase-card showcase-card--berry" data-theme="berry">
@@ -137,9 +142,11 @@
       </div>
     
   </div>
-  <div class="showcase-card__footer">
-    <div class="showcase-card__drop"></div>
-  </div>
+  
+    <div class="showcase-card__footer">
+      <div class="showcase-card__drop"></div>
+    </div>
+  
 </article>
 
                   <article class="showcase-card showcase-card--raw" data-theme="raw">
@@ -181,9 +188,11 @@
       </div>
     
   </div>
-  <div class="showcase-card__footer">
-    <div class="showcase-card__drop"></div>
-  </div>
+  
+    <div class="showcase-card__footer">
+      <div class="showcase-card__drop"></div>
+    </div>
+  
 </article>
 
                   <article class="showcase-card showcase-card--mango" data-theme="mango">
@@ -225,9 +234,11 @@
       </div>
     
   </div>
-  <div class="showcase-card__footer">
-    <div class="showcase-card__drop"></div>
-  </div>
+  
+    <div class="showcase-card__footer">
+      <div class="showcase-card__drop"></div>
+    </div>
+  
 </article>
 
                 </div>
@@ -236,9 +247,12 @@
           </div>
         </section>
 
-        <div class="showcase__drop-wrap">
-	<div class="showcase__drop-inner">
-		<div class="showcase__drop"></div>
+        <div class="slide-drop">
+	<div class="slide-drop__inner">
+		<div class="slide-drop__content"></div>
+		<div class="slide-drop__paper"></div>
+		<div class="slide-drop__glow"></div>
+		<div class="slide-drop__blink"></div>
 	</div>
 </div>
 
@@ -292,6 +306,6 @@
   </div>
 </section>
 
-    <script src="./js/index.min.js?_v=20230712191509"></script>
+    <script src="./js/index.min.js?_v=20230714085608"></script>
   </body>
 </html>

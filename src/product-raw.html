@@ -11,11 +11,11 @@
     <meta name="format-detection" content="telephone=no">
 
   </head>
-  <body>
+  <body data-theme="raw">
     <div class="wrapper">
       @@include('tpls/header.html',{})
 
-      <main class="main" data-theme="raw">
+      <main class="main">
         @@include('tpls/mdg/section-product.html', {
           model: 'raw',
           desc: 'Mad Dog Vodka RAW — это сочетание стиля, непосредственности и классики в одном напитке. Водка высокого качества станет идеальной основой для множества коктейлей. Чистейшая вода и 100% зерновой спирт формируют мягкость напитка, поэтому он также прекрасно подойдет для употребления в чистом виде со льдом. Mad Dog Vodka RAW идеальна для больших вечеринок, где каждый может выбрать для себя подходящий вариант.',
@@ -23,7 +23,7 @@
           hide_ice: true,
         })
 
-        @@include('tpls/mdg/drop.html', {})
+        @@include('tpls/mdg/drop-active.html', {})
       </main>
 
       @@include('tpls/footer.html',{})

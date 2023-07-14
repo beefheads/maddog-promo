@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body data-theme="berry">
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main">
+        @@include('tpls/mdg/section-cocktail.html', {
+          model: 'Полный дзен',
+          volume: [
+            '40 мл',
+            '25 мл',
+            '15 мл',
+            '',
+          ],
+          ingridients: [
+            'водка Mad Dog Cranberry + саган дайля',
+            'сок лимона',
+            'клюквенный сироп',
+            'лёд',
+          ],
+          steps: [
+            'Сделать настойку водки Mad Dog Cranberry с чаем саган дайля, из расчета 4 грамма на 500 мл водки.',
+            'Взбить все ингредиенты в шейкере, перелить в охлажденный бокал со льдом.',
+            'Украсить ягодами клюквы.',
+          ],
+          img: 'full-zen',
+          theme: 'berry',
+        })
+
+        @@include('tpls/mdg/drop-active.html', {})
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

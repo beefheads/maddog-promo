@@ -355,31 +355,3 @@
   background-size: contain;
   transition: var(--tr-regular);
 }
-
-[data-theme="citrus"],
-[data-theme="citrus"] .button-parper .button__bg {
-  --button-bg: url("../img/common/button-on-yellow.png");
-  --fg-product: #462A04;
-  --fg-product-model: #FFF1CF;
-}
-
-[data-theme="berry"],
-[data-theme="berry"] .button-parper .button__bg {
-  --button-bg: url("../img/common/button-on-magenta.png");
-  --fg-product: #5C0016;
-  --fg-product-model: #FFD9E2;
-}
-
-[data-theme="raw"],
-[data-theme="raw"] .button-parper .button__bg {
-  --button-bg: url("../img/common/button-on-cyan.png");
-  --fg-product: #23005C;
-  --fg-product-model: #E2F3FF;
-}
-
-[data-theme="mango"],
-[data-theme="mango"] .button-parper .button__bg {
-  --button-bg: url("../img/common/button-on-mango.png");
-  --fg-product: #5C0000;
-  --fg-product-model: #FFE09F;
-}

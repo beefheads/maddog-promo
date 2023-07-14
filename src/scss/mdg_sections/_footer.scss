@@ -2,6 +2,8 @@
 	padding-top: 4.5rem;
 	padding-bottom: 4.5rem;
 	margin-top: auto;
+	position: relative;
+	z-index: var(--z-footer);
 }
 
 .footer__container {
@@ -14,7 +16,12 @@
 	width: 100%;
 	margin-bottom: 4.3rem;
 	opacity: 0.2;
-	mix-blend-mode: difference;
+	// mix-blend-mode: difference;
+	transition: var(--tr-regular);
+	filter: invert(1);
+}
+[data-theme] .footer__legal-media {
+	filter: none;
 }
 
 .footer__legal-media-pic {
@@ -39,6 +46,11 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 103%;
+	transition: var(--tr-regular);
+}
+
+[data-theme] .footer__legal-credits {
+	color: var(--fg-on);
 }
 
 .footer__legal-credits * {

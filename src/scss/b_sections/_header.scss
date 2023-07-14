@@ -1,5 +1,6 @@
 .header {
   --tr-jolly-enter: cubic-bezier(0.5, 0, 0.5, 1);
+  // --fg: 
   // position: sticky;
   top: 0;
   left: 0;
@@ -107,7 +108,7 @@ body:not(._lock) .header--hidden {
 .header__nav-item {
   position: relative;
   transition: var(--tr-regular);
-  color: #005EAA;
+  color: var(--fg, #005EAA);
   font-family: 'Intro Demo';
   font-size: 1.4rem;
   font-style: normal;
@@ -158,7 +159,7 @@ body:not(._lock) .header--hidden {
 
 .header__nav-link:hover {
   @media (any-hover:hover) {
-    color: var(--c-second);
+    color: var(--fg-active);
   }
 }
 

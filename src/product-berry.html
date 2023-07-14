@@ -11,18 +11,18 @@
     <meta name="format-detection" content="telephone=no">
 
   </head>
-  <body>
+  <body data-theme="berry">
     <div class="wrapper">
       @@include('tpls/header.html',{})
 
-      <main class="main" data-theme="berry">
+      <main class="main">
         @@include('tpls/mdg/section-product.html', {
           model: 'c*berry',
           desc: 'Гармония чистой воды, спирта высочайшего качества и яркого аромата спелых ягод воплотилась в Mad Dog Vodka C*berry. Вкус напитка универсален: подходит к любым поводам от уютных домашних посиделок до шумных мальчишников и девичников. Богатое клюквенное послевкусие придает напитку глубину и питкость. Водка сочетается с цитрусовыми соками, тониками и лаймом, поэтому может стать отличной базой для уникальных авторских коктейлей.',
           img: 'berry',
         })
 
-        @@include('tpls/mdg/drop.html', {})
+        @@include('tpls/mdg/drop-active.html', {})
       </main>
 
       @@include('tpls/footer.html',{})

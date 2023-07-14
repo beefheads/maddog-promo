@@ -40,37 +40,7 @@
 			margin-right: 0;
 		}
 
-.showcase-card--citrus {
-	--bg-card: #EEC761;
-	--fg-model: #FFE29D;
-	--fg-title: #462A04;
-	--fg-desc: #462A04;
-	--button-bg: url("../img/common/button-on-yellow.png");
-}
-
-.showcase-card--berry {
-	--bg-card: #F0BCC8;
-	--fg-model: #ffebef;
-	--fg-title: #5C0016;
-	--fg-desc: #5C0016;
-	--button-bg: url("../img/common/button-on-magenta.png");
-}
-
-.showcase-card--raw {
-	--bg-card: #7FC8EC;
-	--fg-model: #E2F3FF;
-	--fg-title: #23005C;
-	--fg-desc: #23005C;
-	--button-bg: url("../img/common/button-on-cyan.png");
-}
-
-.showcase-card--mango {
-	--bg-card: #F0BC70;
-	--fg-model: #FFE09F;
-	--fg-title: #5C0000;
-	--fg-desc: #5C0000;
-	--button-bg: url("../img/common/button-on-mango.png");
-}
+		
 .showcase-card:first-of-type {
 	margin-left: 0;
 }
@@ -111,7 +81,7 @@
 	left: 0;
 	top: 0;
 	z-index: 2;
-	color: var(--fg-model);
+	color: var(--fg-active);
 	font-family: 'Intro Demo';
 	font-size: 9.6rem;
 	font-style: normal;
@@ -175,7 +145,7 @@
 }
 
 .showcase-card__title {
-	color: var(--fg-title);
+	color: var(--fg);
 	font-family: 'Intro Demo Cond';
 	font-size: 5rem;
 	font-style: normal;
@@ -192,7 +162,7 @@
 }
 
 .showcase-card__desc {
-	color: var(--fg-desc);
+	color: var(--fg);
 	font-family: 'Intro';
 	font-size: 1.5rem;
 	font-style: normal;
@@ -235,6 +205,7 @@
 		.product__related .showcase-card:hover .showcase-card__media-img {
 			@media (any-hover:hover) {
 				transform: scale(1.15);
+		    object-position: -40rem;
 			}
 		}
 
