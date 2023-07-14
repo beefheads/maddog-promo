@@ -4,6 +4,10 @@
 	margin-top: auto;
 	position: relative;
 	z-index: var(--z-footer);
+
+	@media (max-width: $laptop) {
+		padding-top: 2rem;
+	}
 }
 
 .footer__container {
@@ -42,7 +46,7 @@
 .footer__legal-credits {
 	color: #005EAA;
 	display: grid;
-	font-family: 'Intro Book';
+	font-family: 'Intro Book', sans-serif;
 	font-size: 2rem;
 	font-style: normal;
 	font-weight: 400;

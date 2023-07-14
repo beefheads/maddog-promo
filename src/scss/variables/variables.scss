@@ -54,9 +54,9 @@ $w-burger: $tablet;
   //   --p-container: 1.8rem;
   // }
 
-  // @media (max-width: $mobile-xl) {
-  //   --p-container: 1rem;
-  // }
+  @media (max-width: $mobile-xl) {
+    --p-container: 1.6rem;
+  }
 
   // Widths
   --w-container: 100%;

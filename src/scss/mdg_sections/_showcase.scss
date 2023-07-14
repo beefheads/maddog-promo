@@ -2,6 +2,14 @@
 	padding-top: 3.5rem;
 	padding-bottom: 3.5rem;
 	--drop-color: #fff;
+	overflow: hidden;
+
+	@media (max-width: $laptop) {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		// margin-left: #{'calc(0px - var(--p-container))'};
+		// margin-right: #{'calc(0px - var(--p-container))'};
+	}
 }
 .showcase[data-name="citrus"] {
 	--drop-color: #F4D372;
@@ -16,3 +24,13 @@
 	--drop-color: #F0BC70;
 }
 
+.showcase .runway {
+	// margin-right: #{'calc(0px - var(--p-container))'};
+}
+
+.showcase__container {
+	@media (max-width: $laptop) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

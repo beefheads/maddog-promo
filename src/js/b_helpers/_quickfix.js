@@ -2,6 +2,10 @@ import "../libs/lazyload.min.js";
 let lazyLoadInstance = new LazyLoad();
 window.lazyLoad = lazyLoadInstance;
 
+window.screenWidth = {
+  laptop: 1100,
+}
+
 /*
 import { Fancybox, Carousel } from "@fancyapps/ui";
 import { Fancybox, Carousel, Panzoom } from "@fancyapps/ui";

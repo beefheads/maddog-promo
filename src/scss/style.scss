@@ -104,7 +104,9 @@ body._lock {
 }
 
 .main {
-  // margin-top: auto;
+  @media (max-width: $laptop) {
+    margin-top: auto;
+  }
 }
 
 
