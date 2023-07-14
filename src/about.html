@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body class="page-home">
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main">
+
+        <section class="section about">
+          <div class="container about__container">
+            <div class="about__media">
+              <picture class="about__media-pic">
+                <img src="./img/about/about.jpg" alt="о maddog.by" class="about__media-img">
+              </picture>
+            </div>
+
+            <div class="about__content">
+              <div class="about__content-title">
+                <div class="about__content-title-media">
+                  <picture class="about__content-title-media-pic"><img src="./img/common/header-logo.svg" alt="" class="about__content-title-media-img"></picture>
+                </div>
+                <p class="about__content-title-text">это</p>
+              </div>
+
+                <p class="about__content-desc">
+                  Mad Dog Vodka — это сочетание стиля, непосредственности и
+                  классики в одном напитке. <br><br>
+
+                  Водка высокого качества станет идеальной основой для множества коктейлей. Чистейшая вода и 100% зерновой спирт формируют мягкость напитка, поэтому он также прекрасно подойдет для употребления в чистом виде со льдом. Mad Dog Vodka идеальна для больших вечеринок, где каждый может выбрать для себя подходящий вариант.
+                </p>
+
+
+                <h3 class="about__content-subtitle">НАШИ ПРОДУКТЫ</h3>
+                <section class="showcase product__related">
+                    <div class="runway showcase__runway">
+                      <div class="runway__shaft">
+                        <div class="runway__lift">
+                          @@include('./tpls/mdg/showcase-card.html',{
+                            className: 'showcase-card--citrus',
+                            title: 'Citrus',
+                            img: 'citrus',
+                          })
+                          @@include('./tpls/mdg/showcase-card.html',{
+                            className: 'showcase-card--berry',
+                            title: 'Berry',
+                            img: 'berry',
+                          })
+                          @@include('./tpls/mdg/showcase-card.html',{
+                            className: 'showcase-card--raw',
+                            title: 'Raw',
+                            img: 'raw',
+                          })
+                          @@include('./tpls/mdg/showcase-card.html',{
+                            className: 'showcase-card--mango',
+                            title: 'Mango',
+                            img: 'mango',
+                          })
+                        </div>
+                      </div>
+                    </div>
+                </section>
+
+            </div>
+            
+          </div>
+        </section>
+
+        @@include('tpls/mdg/drop.html', {})
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

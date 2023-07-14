@@ -59,6 +59,16 @@
 			margin-right: 0;
 		}
 
+		.about .product__related:not(.showcase--has-opened) .showcase-card {
+			--card-width: 17.2rem;
+			--card-height: 31.5rem;
+
+			@media (max-width: $laptop) {
+				--card-width: 17.2rem;
+				--card-height: 31.5rem;
+			}
+		}
+
 		
 .showcase-card:first-of-type {
 	margin-left: 0;
@@ -122,6 +132,10 @@
 		    padding-top: 19.9rem;
 		    padding-bottom: 17.3rem;
 			}
+		}
+		.about .product__related .showcase-card__body {
+	    padding-top: 12.9rem;
+	    padding-bottom: 12.3rem;
 		}
 
 .showcase-card__model {
@@ -324,6 +338,11 @@
 		    @media (max-width: $laptop) {
 			    object-position: -34rem;
 		    }
+			}
+		}
+		.about .product__related .showcase-card:hover .showcase-card__media-img {
+			@media (any-hover:hover) {
+		    object-position: -20rem;
 			}
 		}
 

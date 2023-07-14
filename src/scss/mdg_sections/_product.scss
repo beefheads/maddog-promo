@@ -54,6 +54,17 @@
 	}
 }
 
+.about .product__related {
+	@media (max-width: $laptop) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	@media (max-width: $mobile-xl) {
+		margin-left: #{'calc(0px - var(--p-container))'};
+		margin-right: #{'calc(0px - var(--p-container))'};
+	}
+}
+
 .product .product__related {
 	@media (max-width: $mobile-xl) {
 		margin-left: #{'calc(0px - var(--p-container))'};
