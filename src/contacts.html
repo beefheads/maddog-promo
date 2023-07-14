@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Отключить автодетект телефонов -->
+    <meta name="format-detection" content="telephone=no">
+
+  </head>
+  <body class="page-home">
+    <div class="wrapper">
+      @@include('tpls/header.html',{})
+
+      <main class="main">
+
+        <section class="section about">
+          <div class="container about__container">
+            <div class="about__media">
+              <picture class="about__media-pic">
+                <img src="./img/about/about.jpg" alt="о maddog.by" class="about__media-img">
+              </picture>
+            </div>
+
+            <div class="contacts__content">
+              <h1 class="contacts__title">напиши нам</h1>
+              <form action="./mail.php" class="contacts__form js_form">
+                <div class="form__hidden">
+                  <input type="hidden" name="utm_source">
+                  <input type="hidden" name="utm_medium">
+                  <input type="hidden" name="utm_campaign">
+                  <input type="hidden" name="utm_content">
+                  <input type="hidden" name="utm_term">
+                  <input type="hidden" name="utm_content">
+                  <input type="hidden" name="utm_term">
+                </div>
+                <fieldset class="form__row">
+                  @@include('tpls/input/name.html', {})
+                  @@include('tpls/input/email.html', {})
+                  @@include('tpls/input/textarea.html', {})
+                </fieldset>
+                <button class="button-paper contats__form-submit">
+                  <span class="button__text">ОТПРАВИТЬ</span>
+                  <span class="button__bg"></span>
+                </button>
+              </form>
+            </div>
+            
+          </div>
+        </section>
+
+        @@include('tpls/mdg/drop.html', {})
+      </main>
+
+      @@include('tpls/footer.html',{})
+    </div>
+
+    @@include('tpls/modals.html', {})
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>

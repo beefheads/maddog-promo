@@ -8,17 +8,38 @@ function extractUTM(form) {
   const urlParams = new URLSearchParams(window.location.search);
 
   // Запись значений UTM-меток в соответствующие поля формы
-  form.querySelector('input[name="utm_source"]').value = urlParams.get('utm_source') || '';
-  form.querySelector('input[name="utm_medium"]').value = urlParams.get('utm_medium') || '';
-  form.querySelector('input[name="utm_campaign"]').value = urlParams.get('utm_campaign') || '';
-  form.querySelector('input[name="utm_content"]').value = urlParams.get('utm_content') || '';
-  form.querySelector('input[name="utm_term"]').value = urlParams.get('utm_term') || '';
+  const utmSource = form.querySelector('input[name="utm_source"]');
+  if (utmSource) {
+    utmSource.value = urlParams.get('utm_source') || '';
+  }
+  const utmMedium = form.querySelector('input[name="utm_medium"]');
+  if (utmMedium) {
+    utmMedium.value = urlParams.get('utm_medium') || '';
+  }
+  const utmCampaign = form.querySelector('input[name="utm_campaign"]');
+  if (utmCampaign) {
+    utmCampaign.value = urlParams.get('utm_campaign') || '';
+  }
+  const utmContent = form.querySelector('input[name="utm_content"]');
+  if (utmContent) {
+    utmContent.value = urlParams.get('utm_content') || '';
+  }
+  const utmTerm = form.querySelector('input[name="utm_term"]')
+  if (utmTerm) {
+    utmTerm.value = urlParams.get('utm_term') || '';
+  }
 
   // Запись значения referer в соответствующее поле формы
-  form.querySelector('input[name="referer"]').value = document.referrer || '';
+  const referer = form.querySelector('input[name="referer"]');
+  if (referer) {
+    referer.value = document.referrer || '';
+  }
 
   // Запись времени отправки формы в соответствующее поле
-  form.querySelector('input[name="requestTime"]').value = Date.now();
+  const requestTime = form.querySelector('input[name="requestTime"]')
+  if (requestTime) {
+    requestTime.value = Date.now();
+  }
 
   // Запись простой подписи (например, md5 хэш) для защиты от подделки данных на клиенте
   // document.querySelector('input[name="requestSimpleSign"]').value = 'Ваша простая подпись';
@@ -119,7 +140,7 @@ async function onFormSuccess(event) {
       }
     } catch {
       console.warn('form return error')
-      window.b_modal.openPop('modal-error')
+      // window.b_modal.openPop('modal-error')
       resetSubmitButtonText(form)
       enableSubmitButton(form)
     }
