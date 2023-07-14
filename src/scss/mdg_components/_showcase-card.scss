@@ -246,7 +246,16 @@
 }
 
 		.product__related .showcase-card__info {
-			display: none;
+			@media (max-width: $mobile-xl) {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+				transform: scaleX(1);
+				opacity: 0;
+			}
 		}
 
 .showcase-card--opened .showcase-card__info {

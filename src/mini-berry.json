@@ -1,0 +1,17 @@
+[
+  {
+    "className": "showcase-card--citrus",
+    "title": "Citrus",
+    "img": "citrus"
+  },
+  {
+    "className": "showcase-card--raw",
+    "title": "Raw",
+    "img": "raw",
+  },
+  {
+    "className": "showcase-card--mango",
+    "title": "Mango",
+    "img": "mango",
+  }
+]

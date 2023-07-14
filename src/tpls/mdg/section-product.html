@@ -51,21 +51,74 @@
           <div class="runway showcase__runway">
             <div class="runway__shaft">
               <div class="runway__lift">
-                @@include('../mdg/showcase-card.html',{
-                  className: 'showcase-card--citrus',
-                  title: 'Citrus',
-                  img: 'citrus',
-                })
-                @@include('../mdg/showcase-card.html',{
-                  className: 'showcase-card--raw',
-                  title: 'Raw',
-                  img: 'raw',
-                })
-                @@include('../mdg/showcase-card.html',{
-                  className: 'showcase-card--mango',
-                  title: 'Mango',
-                  img: 'mango',
-                })
+                @@if (img == 'citrus') {
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--berry',
+                    title: 'C*berry',
+                    img: 'berry',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--raw',
+                    title: 'Raw',
+                    img: 'raw',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--mango',
+                    title: 'Mango',
+                    img: 'mango',
+                  })
+                }
+                @@if (img == 'berry') {
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--citrus',
+                    title: 'Citrus',
+                    img: 'citrus',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--raw',
+                    title: 'Raw',
+                    img: 'raw',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--mango',
+                    title: 'Mango',
+                    img: 'mango',
+                  })
+                }
+                @@if (img == 'raw') {
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--citrus',
+                    title: 'Citrus',
+                    img: 'citrus',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--berry',
+                    title: 'C*berry',
+                    img: 'berry',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--mango',
+                    title: 'Mango',
+                    img: 'mango',
+                  })
+                }
+                @@if (img == 'mango') {
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--citrus',
+                    title: 'Citrus',
+                    img: 'citrus',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--berry',
+                    title: 'C*berry',
+                    img: 'berry',
+                  })
+                  @@include('../mdg/showcase-card.html', {
+                    className: 'showcase-card--raw',
+                    title: 'Raw',
+                    img: 'raw',
+                  })
+                }
               </div>
             </div>
           </div>

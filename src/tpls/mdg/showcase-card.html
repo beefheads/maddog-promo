@@ -17,27 +17,27 @@
         </picture>
       </div>
     }
-    @@if (typeof desc != 'undefined') {
       <div class="showcase-card__info">
-        <h3 class="showcase-card__title">
-          <span class="showcase-card__title-product">
-            MAD DOG VODKA
-          </span>
-          <span class="showcase-card__title-model">
-            @@title
-          </span>
-        </h3>
-        <p class="showcase-card__desc">
-          @@desc
-        </p>
+        @@if (typeof desc != 'undefined') {
+          <h3 class="showcase-card__title">
+            <span class="showcase-card__title-product">
+              MAD DOG VODKA
+            </span>
+            <span class="showcase-card__title-model">
+              @@title
+            </span>
+          </h3>
+          <p class="showcase-card__desc">
+            @@desc
+          </p>
+        }
         <div class="showcase-card__buttons">
-          <a href="#" class="showcase-card__button button-paper">
+          <a href="@@img.html" class="showcase-card__button button-paper">
             <span class="button__text">УЗНАТЬ БОЛЬШЕ</span>
             <span class="button__bg"></span>
           </a>
         </div>
       </div>
-    }
   </div>
   @@if (typeof desc != 'undefined') {
     <div class="showcase-card__footer">
