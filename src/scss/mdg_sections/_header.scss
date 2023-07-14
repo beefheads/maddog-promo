@@ -1,21 +1,32 @@
 .header__container {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
+
+  @media (max-width: $desktop-l) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 .logo__img {
+  height: 7.7rem;
+}
+body:not(.page-home) .logo__img {
   --icon-color: var(--fg);
 }
 
 .header__nav-icon {
   --size: 2.8rem;
-  --icon-color: var(--fg);
   max-width: var(--size);
   min-width: var(--size);
   width: var(--size);
   height: var(--size);
   display: block;
   transition: all 0.3s ease;
+}
+
+body:not(.page-home) .header__nav-icon {
+  --icon-color: var(--fg);
 }
 
 .header__nav-icon:hover {
@@ -38,9 +49,14 @@
   width: 120%;
   height: 0.1rem;
   transform: rotate(-3.075deg);
+  background-color: #005EAA;
+}
+
+body:not(.page-home) .header__nav-item--active .header__nav-link:after {
   background-color: var(--fg, #005EAA);
 }
-.header__nav-item--active:hover .header__nav-link:after {
+
+body:not(.page-home) .header__nav-item--active:hover .header__nav-link:after {
   @media (any-hover:hover) {
     background-color: var(--fg-active, var(--c-second));
   }

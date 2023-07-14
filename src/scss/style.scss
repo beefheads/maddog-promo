@@ -23,13 +23,13 @@ html {
   font-size: #{'calc(var(--fz-modifier) * var(--base-size))'};//calc(0.342466 * var(--base-size)); //10px for 1920×1000
 
 
-  @media (max-width: $desktop-l) {
-    --fz-modifier: 0.625;
-  }
+  // @media (max-width: $desktop-l) {
+  //   --fz-modifier: 0.625;
+  // }
 
-  @media (max-width: $desktop-m)  {
-    --fz-modifier: 0.694444;
-  }
+  // @media (max-width: $desktop-m)  {
+  //   --fz-modifier: 0.694444;
+  // }
 
   @media (max-width: $laptop) {
     --fz-modifier: 1.020834;
@@ -104,7 +104,7 @@ body._lock {
 }
 
 .main {
-  margin-top: auto;
+  // margin-top: auto;
 }
 
 

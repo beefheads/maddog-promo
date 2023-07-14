@@ -16,12 +16,13 @@
 	width: 100%;
 	margin-bottom: 4.3rem;
 	opacity: 0.2;
-	// mix-blend-mode: difference;
 	transition: var(--tr-regular);
 	filter: invert(1);
 }
-[data-theme] .footer__legal-media {
+
+[data-theme]:not(.page-home) .footer__legal-media {
 	filter: none;
+	opacity: 0.5;
 }
 
 .footer__legal-media-pic {
@@ -49,7 +50,7 @@
 	transition: var(--tr-regular);
 }
 
-[data-theme] .footer__legal-credits {
+[data-theme]:not(.page-home) .footer__legal-credits {
 	color: var(--fg-on);
 }
 

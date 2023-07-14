@@ -70,13 +70,25 @@
 	position: absolute;
   // bottom: 34rem;
   // bottom: -30px	;
-	top: 105vh;
+	top: 107rem;
   left: 0;
   right: 0;
   transition: all 1.3s ease-in-out;
 	min-height: var(--drop-height);
 	// height: 100%;
 	height: var(--drop-height);
+
+	@media (max-width: $desktop-l) {
+		// top: 95vh;
+		top: 101.5rem;
+	}
+	@media (max-width: $desktop-m) {
+	// 	top: 97vh;
+		top: 103.5rem;
+	}
+	@media (max-width: $laptop-m) {
+		top: 90.5rem;
+	}
 }
 
 .slide-drop__glow,

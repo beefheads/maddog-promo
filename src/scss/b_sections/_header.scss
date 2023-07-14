@@ -108,12 +108,15 @@ body:not(._lock) .header--hidden {
 .header__nav-item {
   position: relative;
   transition: var(--tr-regular);
-  color: var(--fg, #005EAA);
+  color: #005EAA;
   font-family: 'Intro Demo';
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+}
+body:not(.page-home) .header__nav-item {
+  color: var(--fg, #005EAA);
 }
 
 .header__nav-item:not(:last-child) {

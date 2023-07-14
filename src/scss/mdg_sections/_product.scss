@@ -77,6 +77,10 @@
 	font-weight: 400;
 	line-height: 135.5%;
 	margin-bottom: 1.6rem;
+
+	@media (max-width: $desktop-l) {
+		font-size: 2rem;
+	}
 }
 
 .product__stats-list {

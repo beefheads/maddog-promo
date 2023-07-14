@@ -16,6 +16,11 @@
 .showcase:not(.showcase--has-opened) .showcase-card {
 	margin-left: 2rem;
 	margin-right: 2rem;
+
+	@media (max-width: $laptop-m) {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
 }
 .showcase:not(.showcase--has-opened) .showcase-card:first-of-type {
 	margin-left: 0;
@@ -62,6 +67,11 @@
 	padding-bottom: 16.3rem;
 	transition: inherit;
 	overflow: hidden;
+
+	@media (max-width: $laptop-m) {
+		padding-top: 12.9rem;
+		padding-bottom: 11.3rem;
+	}
 }
 .showcase-card--opened .showcase-card__body {
 	padding-left: 15.2rem;
@@ -97,10 +107,18 @@
 .showcase--has-opened .showcase-card:not(.showcase-card--opened) .showcase-card__model {
 	font-size: 2rem;
 	top: 83.3%;
+
+	@media (max-width: $laptop-m) {
+		top: 81.3%;
+	}
 }
 
 .showcase--has-opened .showcase-card--opened .showcase-card__model {
 	font-size: 12.8rem;
+
+	@media (max-width: $laptop-m) {
+		font-size: 10.8rem;
+	}
 }
 
 .showcase-card__model-name {
