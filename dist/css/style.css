@@ -4898,6 +4898,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   opacity: 0;
 }
 
+.age-check--hidden {
+  pointer-events: none;
+}
+
 .age-check__container {
   width: 100%;
   height: 100%;
@@ -4923,7 +4927,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-position: center;
   background-size: 130%;
   transition: 0.1s;
-  opacity: 0.99;
   transform: translateZ(0);
 }
 @media (max-width: 992px) {
@@ -4932,6 +4935,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     background-size: cover;
     animation: beat 5.8s infinite alternate;
     transform-origin: center;
+  }
+}
+@media (max-width: 601px) {
+  .age-check__glow,
+.age-check__blinks {
+    transition: all 0.1s linear, opacity 3.7s ease 0.5s;
   }
 }
 
@@ -4946,6 +4955,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-image: url("../img/common/blinks.png");
   background-position: calc(0px - var(--x)) calc(0px - var(--y));
   mix-blend-mode: color-dodge;
+  opacity: 1;
+}
+
+.age-check--hidden .age-check__blinks {
+  opacity: 0;
+  transition: all 0.3s linear 1s, opacity 0.1s ease;
 }
 
 .age-check__logo {

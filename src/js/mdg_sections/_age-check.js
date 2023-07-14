@@ -1,4 +1,5 @@
 import {debounce} from "../b_helpers/condition-helpers.js"
+import Cookies from 'js-cookie';
 
 window.addEventListener('DOMContentLoaded', (event) => {
 	const ageCheck = document.querySelector('.age-check');
@@ -25,7 +26,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	function onAccept(e) {
 		const snacky = ageCheck.querySelector('.snacky');
-		console.log(snacky)
 		if (snacky) snacky.removeSnack();
 
 		hideAgeCheck();
@@ -58,32 +58,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	 * Этот скрипт проверяет наличие куки accept_cookie и чтобы его значение было равно true.
 	 * Если это не так, то он создает новый элемент, с содержимым HTML, которое должно быть указано вместо <YOUR-HTML-CODE>. После чего, спустя время равное showTime присваивает ему класс show. При клике по крестику, уведомление будет закрываться и удаляться из DOM через время равное removeTime. В данном случае, removeTime равно времени продолжения анимации скрытия уведомления (transition).
 	 */
-/*
-	import Cookies from 'js-cookie';
 	window.b_cookies = Cookies;
 	function notificationOfCookie(showTime, removeTime) {
-	    const acceptCookie = Cookies.get('accept_cookie');
+	    const acceptCookie = Cookies.get('age_check');
 
 	    if (acceptCookie != undefined || acceptCookie == false) { return }
 
 	    setTimeout(() => {
-	        cookie.classList.add('_show')
+	        ageCheck.classList.remove('age-check--hidden')
 	    }, showTime)
 
-	    const cookie = document.querySelector('.cookie');
-	    const acceptCookieElem = cookie.querySelector('.cookie-accept')
+	    const acceptCookieElem = ageCheck.querySelector('.age-check__button-accept')
 	    acceptCookieElem.addEventListener('click', () => {
-	        cookie.classList.remove('_show')
-	        Cookies.set('accept_cookie', "true")
+	        // ageCheck.classList.remove('age-check--hidden')
+	        Cookies.set('age_check', "true")
 
 	        setTimeout(() => {
-	          cookie.remove()
+	          ageCheck.remove()
 	        }, removeTime)
 	    })
 
 
 	}
-	notificationOfCookie(300, 300);
-	*/
+	notificationOfCookie(0, 400);
 
 });
