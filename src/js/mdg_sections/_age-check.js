@@ -7,6 +7,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	ageCheck.parallaxModifier = 1 / 4;
 	const updateCursor = ({ x, y }) => {
+		if (window.innerWidth < window.screenWidth.laptop) return
+
 		x *= ageCheck.parallaxModifier;
 		y *= ageCheck.parallaxModifier;
 	  ageCheck.style.setProperty('--x', `${x}px`);

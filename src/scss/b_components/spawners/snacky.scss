@@ -22,6 +22,10 @@
   transition: var(--tr-regular);
   opacity: 0;
   transform: translateY(2rem);
+
+  @media (max-width: $tablet-l) {
+    max-width: 25rem;
+  }
 }
 .snacky--visible {
   opacity: 1;

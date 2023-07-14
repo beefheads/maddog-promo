@@ -138,5 +138,10 @@
 .section__buttons-lr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 2rem;
+  gap: 2rem;
+
+  @media (max-width: $tablet-l) {
+    grid-template-columns: 100%;
+    justify-content: center;
+  }
 }

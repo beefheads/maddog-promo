@@ -193,6 +193,7 @@ body:not(.page-home) .header__nav-item {
   margin-right: 4rem;
 
   @media (max-width: $mobile-xl) {
+    margin-left: initial;
     padding-right: 2rem;
   }
 }

@@ -11,15 +11,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		initShowcase(showcase);
 	})
 
-	let prevHeight = window.innerHeight
+	let prevWidth = window.innerWidth
 	window.addEventListener('resize', (e) => {
-		if (window.innerHeight != prevHeight) return;
+		if (window.prevWidth == innerWidth) return;
 
 		showcaseSections.forEach(showcase => {
 			initShowcase(showcase);
 		})
 
-		prevHeight = window.innerHeight;
+		prevWidth = window.innerWidth;
 	}) 
 
 	function initShowcase(showcase) {

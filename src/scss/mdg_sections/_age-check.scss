@@ -36,6 +36,12 @@
   z-index: 3;
 }
 
+
+/* Heart beat animation */
+@keyframes beat {
+	to { transform: scale(1.4); }
+}
+
 .age-check__glow,
 .age-check__blinks {
 	position: absolute;
@@ -47,6 +53,12 @@
   transition: 0.1s;
 	opacity: 0.99;
 	transform: translateZ(0);
+
+	@media (max-width: $tablet) {
+		background-size: cover;
+		animation: beat 5.8s infinite alternate;
+		transform-origin: center;
+	}
 }
 
 .age-check__glow {
@@ -67,7 +79,13 @@
 	width: 100%;
 	margin-bottom: 6.5rem;
 	margin-top: auto;
+
+	@media (max-width: $tablet-l) {
+		max-width: 18.7rem;
+		margin-bottom: 2.5rem;
+	}
 }
+
 .age-check__logo-pic {
 	display: block;
 	width: 100%;
@@ -87,6 +105,11 @@
 	font-weight: 900;
 	line-height: normal;
 	margin-bottom: 8.5rem;
+
+	@media (max-width: $tablet-l) {
+		font-size: 3.2rem;
+		margin-bottom: 2rem;
+	}
 }
 
 .age-check__buttons {
@@ -97,6 +120,12 @@
 	--button-bg: url("../img/common/button-on-blue.png");
 	--button-fg: #0D5B9E;
 	font-size: 2.5rem;
+
+	@media (max-width: $tablet-l) {
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 2rem;
+	}
 }
 
 .age-check__button-accept .button__text {
