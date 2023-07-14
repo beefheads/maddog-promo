@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
+    <title>Страница ошибки</title>
     <link rel="stylesheet" href="./css/style.css?_v=20230714202356">
 
     <!-- Отключить автодетект телефонов -->
     <meta name="format-detection" content="telephone=no">
 
   </head>
-  <body class="page-home">
+  <body>
     <div class="wrapper">
       <header class="header">
   <div class="container header__container">
@@ -51,73 +51,17 @@
 
 
       <main class="main">
-
-        <section class="section about">
-          <div class="container about__container">
-            <div class="about__media">
-              <picture class="about__media-pic">
-                <img src="./img/about/about.jpg" alt="о maddog.by" class="about__media-img">
-              </picture>
-            </div>
-
-            <div class="contacts__content">
-              <h1 class="contacts__title">напиши нам</h1>
-              <form action="./mail.php" class="contacts__form js_form">
-                <div class="form__hidden">
-                  <input type="hidden" name="utm_source">
-                  <input type="hidden" name="utm_medium">
-                  <input type="hidden" name="utm_campaign">
-                  <input type="hidden" name="utm_content">
-                  <input type="hidden" name="utm_term">
-                  <input type="hidden" name="utm_content">
-                  <input type="hidden" name="utm_term">
-                </div>
-                <fieldset class="form__row">
-                  <label class="input input-name js_form__control">
-  <svg class="input__icon">
-    <use xlink:href="./img/common/user.svg#user"></use>
-  </svg>
-  <input
-    class="input__field"
-    name="user_name"
-    type="text"
-    placeholder="Имя"
-    autocomplete="name"
-    required
-  >
-</label>
-
-                  <label class="input input-email js_form__control">
-  <svg class="input__icon">
-    <use xlink:href="./img/common/mail.svg#mail"></use>
-  </svg>
-  <input
-    class="input__field"
-    name="user_email"
-    type="email"
-    placeholder="Ваша почта"
-    autocomplete="email"
-    required
-  >
-</label>
-
-                  <label class="textarea">
-  <textarea class="textarea__field" placeholder="Пожелания"></textarea>
-</label>
-
-                </fieldset>
-                <button class="button-paper contats__form-submit">
-                  <span class="button__text">ОТПРАВИТЬ</span>
-                  <span class="button__bg"></span>
-                </button>
-              </form>
-            </div>
-            
+        <section class="section-error">
+          <div class="container section-error__container">
+            <h2 class="section-title section-error__status">404</h2>
+            <p class="section-desc section-error__desc">
+              Попробуйте вернуться на главную страницу
+            </p>
+            <a href="#" class="button button-filled button-primary">Вернуться на главную</a>
           </div>
         </section>
-
-        
       </main>
+
 
       <footer class="footer">
   <div class="container footer__container">
@@ -166,6 +110,6 @@
   </div>
 </section>
 
-    <script src="./js/index.min.js?_v=20230714202356"></script>
+    <script src="./js/bundle.min.js?_v=20230714202356"></script>
   </body>
 </html>

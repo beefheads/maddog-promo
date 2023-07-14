@@ -163,6 +163,9 @@
 		font-size: 3.7rem;
 	}
 }
+		.showcase-card--cocktail .showcase-card__model {
+			color: #fff;
+		}
 
 		.product__related .showcase-card__model {
 			font-size: 4rem;
@@ -246,16 +249,14 @@
 }
 
 		.product__related .showcase-card__info {
-			@media (max-width: $mobile-xl) {
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				opacity: 1;
-				transform: scaleX(1);
-				opacity: 0;
-			}
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			transform: scaleX(1);
+			opacity: 0;
 		}
 
 .showcase-card--opened .showcase-card__info {
@@ -349,6 +350,12 @@
 		    }
 			}
 		}
+		.cocktail__related .showcase-card:hover .showcase-card__media-img {
+			@media (any-hover:hover) {
+				transform: scale(1.15);
+		    object-position: center;
+			}
+		}
 		.about .product__related .showcase-card:hover .showcase-card__media-img {
 			@media (any-hover:hover) {
 		    object-position: -20rem;
@@ -430,3 +437,17 @@
     padding-right: 1rem;
 	}
 }
+		.product__related .showcase-card__button {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			max-width: 100%;
+	    min-width: initial;
+	    margin-left: auto;
+	    margin-right: auto;
+	    padding-left: 1rem;
+	    padding-right: 1rem;
+		}

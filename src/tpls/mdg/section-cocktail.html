@@ -20,11 +20,11 @@
     </div>
     <div class="cocktail__details">
       <div class="cocktail__details-tabs">
-        <button class="button-paper cocktail__details-tabs-button">
+        <a href="@@theme.html" class="button-paper cocktail__details-tabs-button">
           <span class="button__text">ПРОДУКТЫ</span>
           <span class="button__bg"></span>
-        </button>
-        <button class="button-paper cocktail__details-tabs-button  cocktail__details-tabs-button--active">
+        </a>
+        <button class="button-paper cocktail__details-tabs-button  cocktail__details-tabs-button--active" type="button">
           <span class="button__text">КОКТЕЙЛИ</span>
           <span class="button__bg"></span>
         </button>
@@ -59,25 +59,90 @@
         </div>
       </div>
 
-      <section class="showcase product__related">
+      <section class="showcase product__related cocktail__related">
           <div class="runway showcase__runway">
             <div class="runway__shaft">
               <div class="runway__lift">
-                @@include('../mdg/showcase-card.html',{
-                  className: 'showcase-card--citrus',
-                  title: 'Citrus',
-                  img: 'citrus',
-                })
-                @@include('../mdg/showcase-card.html',{
-                  className: 'showcase-card--raw',
-                  title: 'Raw',
-                  img: 'raw',
-                })
-                @@include('../mdg/showcase-card.html',{
-                  className: 'showcase-card--mango',
-                  title: 'Mango',
-                  img: 'mango',
-                })
+                @@if (img == 'love-me-love') {
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--berry',
+                    title: 'Полный дзен',
+                    img: 'berry',
+                    pic: 'full-zen',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--raw',
+                    title: 'Кайпироска',
+                    img: 'raw',
+                    pic: 'kaipiroska',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--mango',
+                    title: 'Такая лайф',
+                    img: 'mango',
+                    pic: 'this-life',
+                  })
+                }
+                @@if (img == 'full-zen') {
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--citrus',
+                    title: 'Люби меня люби',
+                    img: 'citrus',
+                    pic: 'love-me-love',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--raw',
+                    title: 'Кайпироска',
+                    img: 'raw',
+                    pic: 'kaipiroska',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--mango',
+                    title: 'Такая лайф',
+                    img: 'mango',
+                    pic: 'this-life',
+                  })
+                }
+                @@if (img == 'kaipiroska') {
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--citrus',
+                    title: 'Люби меня люби',
+                    img: 'citrus',
+                    pic: 'love-me-love',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--berry',
+                    title: 'Полный дзен',
+                    img: 'berry',
+                    pic: 'full-zen',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--mango',
+                    title: 'Такая лайф',
+                    img: 'mango',
+                    pic: 'this-life',
+                  })
+                }
+                @@if (img == 'this-life') {
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--citrus',
+                    title: 'Люби меня люби',
+                    img: 'citrus',
+                    pic: 'love-me-love',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--berry',
+                    title: 'Полный дзен',
+                    img: 'berry',
+                    pic: 'full-zen',
+                  })
+                  @@include('../mdg/showcase-card-cocktail.html',{
+                    className: 'showcase-card--raw',
+                    title: 'Кайпироска',
+                    img: 'raw',
+                    pic: 'kaipiroska',
+                  })
+                }
               </div>
             </div>
           </div>
