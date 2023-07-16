@@ -138,6 +138,16 @@
 	    padding-bottom: 12.3rem;
 		}
 
+		.showcase--no-hover	.showcase-card__body {
+	    padding-top: 34.9rem;
+	    padding-bottom: 33.3rem;
+
+	    @media (max-width: $laptop) {
+		    padding-top: 19.9rem;
+		    padding-bottom: 17.3rem;
+	    }
+		}
+
 .showcase-card__model {
 	position: absolute;
 	left: 0;
@@ -169,6 +179,14 @@
 
 		.product__related .showcase-card__model {
 			font-size: 4rem;
+		}
+
+		.showcase--no-hover .showcase-card__model-name {
+			font-size: 6.6rem;
+
+			@media (max-width: $mobile-xl) {
+				font-size: 3.2rem;
+			}
 		}
 
 .showcase--has-opened .showcase-card:not(.showcase-card--opened) .showcase-card__model {
@@ -215,6 +233,15 @@
 			transform: rotate(90deg) scale(-1) translate(-28.2rem, -28rem);
 		}
 
+		.showcase--no-hover .showcase-card__model-name {
+			width: 70rem;
+			transform: rotate(90deg) scale(-1) translate(-32rem, -31rem);
+			
+			@media (max-width: $mobile-xl) {
+				transform: rotate(90deg) scale(-1) translate(-34rem, -33rem)
+			}
+		}
+
 .showcase-card--opened .showcase-card__model-name {
 	@media (min-width: $laptop + 1) {
 		transform: rotate(90deg) scale(-1) translate(-23rem, -25rem);
@@ -248,6 +275,7 @@
 	}
 }
 
+		.showcase--no-hover .showcase-card__info,
 		.product__related .showcase-card__info {
 			position: absolute;
 			left: 0;
@@ -437,6 +465,7 @@
     padding-right: 1rem;
 	}
 }
+		.showcase--no-hover .showcase-card__button,
 		.product__related .showcase-card__button {
 			position: absolute;
 			left: 0;

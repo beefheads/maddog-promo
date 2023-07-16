@@ -1,16 +1,23 @@
-.slide-drop {
-	--drop-color: #fff;
+.slide-drop-container {
 	position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-	transition: all 0.4s;
-  display: grid;
-	grid-template-rows: 0fr;
 	pointer-events: none;
 	overflow: hidden;
 	z-index: 5;
+}
+.slide-drop {
+	--drop-color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s, background-color 0.2s linear 0.8s;
+  display: grid;
+	grid-template-rows: 0fr;
 }	
 
 [data-theme="citrus"] .slide-drop {
@@ -41,14 +48,24 @@
 	--drop-color: #FFA530;
 }
 
+.slide-drop--enter {
+	background-color: var(--drop-color);
+}
+
 .slide-drop--active {
 	grid-template-rows: 1fr;
 	position: fixed;
+	pointer-events: initial;
 }
 
 .slide-drop__inner {
 	position: relative;
 	min-height: 4.2rem;
+	background-color: transparent;
+}
+.slide-drop--enter .slide-drop__inner {
+	background-color: var(--drop-height);
+	transition: background-color 0.3s linear 0.5s;
 }
 
 .slide-drop__content {
@@ -70,7 +87,8 @@
 	position: absolute;
   // bottom: 34rem;
   // bottom: -30px	;
-	top: 107rem;
+	// top: 107rem;
+	top: 108.5rem;
   left: 0;
   right: 0;
   transition: all 1.3s ease-in-out;
@@ -91,28 +109,26 @@
 	}
 }
 
-.slide-drop__glow,
 .slide-drop__blink,
 .slide-drop__paper {
 	content: "";
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	display: block;
 	width: 100%;
 	height: 130%;
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 	opacity: 0;
-	transition: 0.3s;
+	transition: 0.4s linear 1.2s;
+	background-size: 120%;
+	background-position: -10rem -10rem;
 }
-.slide-drop__glow {
-	// background-image: url('../img/common/glow.png');
-}
+
 .slide-drop__blink {
-	background-image: url('../img/common/blinks.png');
+	background-image: url('../img/common/blinks.jpg');
 	mix-blend-mode: screen;
+	background-color: var(--drop-color);
 }
 .slide-drop__paper {
 	background-image: url('../img/common/paper.png');
@@ -133,11 +149,11 @@
 	transform: none;
 	border-radius: 0;
 }
-.slide-drop--active .slide-drop__glow,
-.slide-drop--active .slide-drop__paper {
-	opacity: 0.35;
+
+.slide-drop--enter .slide-drop__paper {
+	opacity: 0.65;
 }
-.slide-drop--active .slide-drop__blink {
+.slide-drop--enter .slide-drop__blink {
 	opacity: 0.8;
 	opacity: 1;
 }

@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	function initShowcase(showcase) {
 		if (showcase.classList.contains('product__related')) return;
+		if (showcase.classList.contains('showcase--no-hover')) return;
 		
 		const cards = [...showcase.querySelectorAll('.showcase-card')];
 

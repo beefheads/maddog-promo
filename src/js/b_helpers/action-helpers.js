@@ -184,3 +184,15 @@ scrollTopButtons.forEach((button) =>
     scrollTop(event);
   })
 );
+
+export function preloadImages() {
+  let sources = [
+    window.location.origin + '/img/common/paper.png',
+  ];
+
+  for (let i = 0; i < sources.length; i++) {
+    sources[i] += "?" + Math.random();
+  }
+
+  console.log(sources)
+}
