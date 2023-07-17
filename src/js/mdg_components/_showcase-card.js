@@ -29,7 +29,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		document.body.classList.remove('page-home');
 		hideProductList();
 		document.body.dataset.theme = e.detail.theme;
-		spawnProduct(e.detail.theme);
+
+		const zIndex = 5 + [...document.querySelectorAll('.slide-drop')].length;
+
+		// хотел сделать, чтобы предыдущий продукт убирался
+		spawnProduct(e.detail.theme, zIndex);
+		spawnDrop(zIndex + 1);
 	})
 
 	function hideProductList() {
@@ -37,8 +42,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		document.querySelector('main > .section.showcase').classList.add('is-hidden');
 	}
 
+	function getLastDrop() {
+
+	}
+
 	function growDrop(currentCard) {
-		const drop = document.querySelector('.slide-drop');
+		const drop = document.querySelector('.slide-drop:last-child');
 
 		drop.classList.add(DROP_CLASSES.enter);
 
@@ -56,9 +65,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		}, 800)
 	}
 
-	function spawnDrop() {
+	function spawnDrop(zIndex) {
 		const drop = `
-			<div class="slide-drop">
+			<div class="slide-drop" style="z-index: ${zIndex};">
 				<div class="slide-drop__inner">
 					<div class="slide-drop__content"></div>
 					<div class="slide-drop__paper"></div>
@@ -78,7 +87,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		card.addEventListener('click', handleCardClick);
 
 		const button = card.querySelector('.showcase-card__button')
-		// console.log(button)
 		button.addEventListener('click', (e) => {
 			e.preventDefault();
 		});
@@ -86,7 +94,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		card.classList.add(CARDS_CLASSES.ajaxInited);
 	}
 
-	function spawnProduct(productName) {
+	function spawnProduct(productName, zIndex = 5) {
 		if (typeof window.products[productName] == 'undefined') {
 			console.warn(`No such product "${productName}"`);
 			return;
@@ -170,11 +178,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			  </div>
 			</section>
 		`;
-		document.querySelector('main').innerHTML += productSection;
 
-		// document.querySelector('main .section.product').querySelectorAll('.showcase-card').forEach(card => {
-		// 	initCard(card);
-		// })
+		const ajaxProduct = document.createElement('div');
+		ajaxProduct.classList.add('js_product', 'js_product--inited');
+		ajaxProduct.innerHTML = productSection;
+		ajaxProduct.style.zIndex = zIndex;
+		document.querySelector('main').append(ajaxProduct);
+
+		const miniCards = ajaxProduct.querySelectorAll('.showcase-card');
+		miniCards.forEach(card => {
+			initCard(card);
+		})
+
 	}
 
 	function getProductCard(productName) {
