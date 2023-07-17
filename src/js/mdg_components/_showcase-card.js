@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			console.warn(`No such product "${productName}"`);
 			return false;
 		}
-		const {title, desc, related} = window.products[productName];
+		const {title, desc, related, cocktail} = window.products[productName];
 
 		let productSection = `
 			<section class="section product">
@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			          <span class="button__text">ПРОДУКТЫ</span>
 			          <span class="button__bg"></span>
 			        </button>
-			        <a href="@@cocktail.html" class="button-paper product__details-tabs-button">
+			        <a href="${cocktail}.html" class="button-paper product__details-tabs-button">
 			          <span class="button__text">КОКТЕЙЛИ</span>
 			          <span class="button__bg"></span>
 			        </a>
@@ -194,12 +194,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		const productSection = getProductSection(productName);
 		if (!productSection) return;
 
+		let transitionTiming = 0;
 		const oldProduct = document.querySelector('.js_product');
 		if (oldProduct) {
 			oldProduct.querySelectorAll('.showcase-card').forEach(card => {
 				card.removeEventListener('click', handleCardClick);
 			})
-			oldProduct.remove();
+
+			const lastCocktail = oldProduct.querySelector('.cocktail--visible')
+			if (lastCocktail) {
+				transitionTiming = 1200;
+				lastCocktail.classList.remove('cocktail--visible');
+				setTimeout(() => {
+					oldProduct.remove();
+				}, transitionTiming);
+			} else {
+				oldProduct.remove();
+			}
 		}
 
 		const ajaxProduct = document.createElement('div');
@@ -210,11 +221,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		setTimeout(() => {
 			ajaxProduct.querySelector('.product').classList.add('product--visible');
-		}, 100)
+		}, transitionTiming + 100);
 
 		const miniCards = ajaxProduct.querySelectorAll('.showcase-card');
 		miniCards.forEach(card => {
 			initCard(card);
+		})
+
+		const tabs = ajaxProduct.querySelectorAll('.product__details-tabs-button');
+		tabs.forEach(tab => {
+			if (tab.classList.contains('product__details-tabs-button--active')) return;
+			tab.addEventListener('click', (e) => {
+				e.preventDefault();
+				const cocktail = window.products[document.body.dataset.theme].cocktail;
+				spawnCocktail(cocktail, zIndex);
+			})
 		})
 
 	}
@@ -381,18 +402,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		return cocktail;
 	}
 
-	function spawnCocktail(cocktailName, zIndex) {
-		// document.querySelector('main').innerHTML += productSection;
-
+	function spawnCocktail(cocktailName, zIndex = 5) {
 		const cocktailSection = getCocktailSection(cocktailName);
 		if (!cocktailSection) return;
 
+		let transitionTiming = 0
 		const oldCocktail = document.querySelector('.js_product');
 		if (oldCocktail) {
 			oldCocktail.querySelectorAll('.showcase-card').forEach(card => {
 				card.removeEventListener('click', handleCardClick);
 			})
-			oldCocktail.remove();
+
+			const lastProduct = oldCocktail.querySelector('.product--visible');
+			if (lastProduct) {
+				transitionTiming = 1200;
+				lastProduct.classList.remove('product--visible');
+				setTimeout(() => {
+					oldCocktail.remove();
+				}, transitionTiming);
+			} else {
+				oldCocktail.remove();
+			}
 		}
 
 		const ajaxCocktail = document.createElement('div');
@@ -403,25 +433,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		setTimeout(() => {
 			ajaxCocktail.querySelector('.cocktail').classList.add('cocktail--visible');
-		}, 100)
+		}, transitionTiming + 100);
 
 		const miniCards = ajaxCocktail.querySelectorAll('.showcase-card');
 		miniCards.forEach(card => {
 			initCard(card);
 		})
 
+		const tabs = ajaxCocktail.querySelectorAll('.cocktail__details-tabs-button');
+		tabs.forEach(tab => {
+			if (tab.classList.contains('cocktail__details-tabs-button--active')) return;
+			tab.addEventListener('click', (e) => {
+				e.preventDefault();
+				spawnProduct(document.body.dataset.theme, zIndex);
+			})
+		})
+
 	}
-
-
-	/*
-
-		1. Клик по карточке
-			1. Рост первой капли
-			2. Спавн новой капли
-			3. Тайминг: капля выросла
-				1. Убрать старый товар
-				2. Добавить новый товар
-
-	*/
-
 });
