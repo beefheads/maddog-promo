@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mango | MADDOG</title>
+    <title>Mangogo | MADDOG</title>
     <link rel="stylesheet" href="./css/style.css">
 
     <!-- Отключить автодетект телефонов -->
     <meta name="format-detection" content="telephone=no">
 
   </head>
-  <body data-theme="mango">
+  <body class="page-product" data-theme="mango">
     <div class="wrapper">
-      @@include('tpls/header.html',{})
+      @@include('tpls/header.html',{activeNav: 'main'})
 
       <main class="main">
         @@include('tpls/mdg/section-product.html', {
-          model: 'mango',
+          model: 'mangogo',
           desc: 'Прекрасный напиток для всех, кому по душе яркость и сочность тропиков в сочетании с мягкой крепостью чистого напитка. Водка обладает округлым вкусом и ярко выраженным ароматом манго, который делает Mad Dog Vodka ManGoGo! еще гармоничнее. Отлично подходит для вечеров с друзьями, когда хочется чего- нибудь необычного, но смешивать коктейли или выходить из дома не охота. Все уже готово для идеального вечера.',
           img: 'mango',
           cocktail: 'this-life',
+          degrees: '38',
         })
 
         @@include('tpls/mdg/drop-active.html', {})

@@ -11,17 +11,18 @@
     <meta name="format-detection" content="telephone=no">
 
   </head>
-  <body data-theme="citrus">
+  <body class="page-product" data-theme="citrus">
     <div class="wrapper">
-      @@include('tpls/header.html',{})
+      @@include('tpls/header.html',{activeNav: 'main'})
 
       <main class="main">
 
         @@include('tpls/mdg/section-product.html', {
           model: 'Citrus',
-          desc: 'Высококачественный спирт класса «Белальфа» соединяется с чистейшей водой и ярким ароматом цитрусовых вMad Dog Vodka CiTrust. Напиток имеет сбалансированный вкус и приятное свежее послевкусие. Подходит для тех, кто стремится к открытиям, ценит небанальные и смелые решения. Mad Dog Vodka CiTrus в чистом виде станет отличным дополнением к закускам из морепродуктов, а в праздничные коктейли добавит насыщенных нот апельсина, лимона и лайма.',
+          desc: 'Высококачественный спирт класса «Белальфа» соединяется с чистейшей водой и ярким ароматом цитрусовых в Mad Dog Vodka CiTrust. Напиток имеет сбалансированный вкус и приятное свежее послевкусие. Подходит для тех, кто стремится к открытиям, ценит небанальные и смелые решения. Mad Dog Vodka CiTrus в чистом виде станет отличным дополнением к закускам из морепродуктов, а в праздничные коктейли добавит насыщенных нот апельсина, лимона и лайма.',
           img: 'citrus',
-          cocktail: 'love-me-love'
+          cocktail: 'love-me-love',
+          degrees: '38',
         })
 
         @@include('tpls/mdg/drop-active.html', {})

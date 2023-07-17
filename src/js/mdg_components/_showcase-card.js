@@ -1,11 +1,11 @@
-import {preloadImages} from '../b_helpers/action-helpers.js';
+// import {preloadImages} from '../b_helpers/action-helpers.js';
 
 window.addEventListener('DOMContentLoaded', (event) => {
 	const cards = [...document.querySelectorAll('.showcase-card')];
 
 	if (cards.length < 1) return;
 
-	preloadImages()
+	// preloadImages()
 
 	const CARDS_CLASSES = {
 		ajaxInited: 'showcase-card--ajax-inited',
@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	});
 
 	function handleCardClick(e) {
+		e.preventDefault();
 		const currentCard = e.target.closest('.showcase-card');
 		growDrop(currentCard);
 	}
@@ -85,7 +86,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	function initCard(card) {
 		if (card.classList.contains(CARDS_CLASSES.ajaxInited)) return;
 
-		card.addEventListener('click', handleCardClick);
+		const button = card.querySelector('.showcase-card__button')
+		button.addEventListener('click', handleCardClick);
 		const drop = document.querySelector('.slide-drop-container .slide-drop:last-child');
 		card.addEventListener('mouseover', () => {
 			drop.dataset.theme = card.dataset.theme;
@@ -93,11 +95,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		card.addEventListener('mouseleave', () => {
 			// drop.removeAttribute('data-theme');
 		})
-
-		const button = card.querySelector('.showcase-card__button')
-		button.addEventListener('click', (e) => {
-			e.preventDefault();
-		});
 
 		card.classList.add(CARDS_CLASSES.ajaxInited);
 	}
@@ -107,7 +104,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			console.warn(`No such product "${productName}"`);
 			return false;
 		}
-		const {title, desc, related, cocktail} = window.products[productName];
+		const {title, desc, related, cocktail, degrees} = window.products[productName];
 
 		let productSection = `
 			<section class="section product">
@@ -159,7 +156,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			        </li>
 			        <li class="product__stat">
 			          <span class="product__stat-title">Крепость:</span>
-			          <span class="product__stat-value">38 %</span>
+			          <span class="product__stat-value">${degrees} %</span>
 			        </li>
 			      </ul>
 
@@ -195,13 +192,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		if (!productSection) return;
 
 		let transitionTiming = 0;
-		const oldProduct = document.querySelector('.js_product');
+		const oldProduct = document.querySelector('.js_product') || document.querySelector('.product') || document.querySelector('.cocktail');
 		if (oldProduct) {
 			oldProduct.querySelectorAll('.showcase-card').forEach(card => {
 				card.removeEventListener('click', handleCardClick);
 			})
 
-			const lastCocktail = oldProduct.querySelector('.cocktail--visible')
+			const lastCocktail = oldProduct.querySelector('.cocktail--visible') || oldProduct;
 			if (lastCocktail) {
 				transitionTiming = 1200;
 				lastCocktail.classList.remove('cocktail--visible');
@@ -228,6 +225,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			initCard(card);
 		})
 
+		initProductTabs(ajaxProduct)
+	}
+
+	function calcZIndex() {
+		const zIndex = 5 + [...document.querySelectorAll('.slide-drop')].length;
+		return zIndex;
+	}
+
+	function initProductTabs(ajaxProduct) {
+		const zIndex = calcZIndex();
 		const tabs = ajaxProduct.querySelectorAll('.product__details-tabs-button');
 		tabs.forEach(tab => {
 			if (tab.classList.contains('product__details-tabs-button--active')) return;
@@ -237,8 +244,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				spawnCocktail(cocktail, zIndex);
 			})
 		})
-
 	}
+	window.initProductTabs = initProductTabs;
 
 	function getProductCard(productName) {
 		const {className, title} = window.products[productName];
@@ -407,13 +414,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		if (!cocktailSection) return;
 
 		let transitionTiming = 0
-		const oldCocktail = document.querySelector('.js_product');
+		const oldCocktail = document.querySelector('.js_product') || document.querySelector('.product') || document.querySelector('.cocktail');
 		if (oldCocktail) {
 			oldCocktail.querySelectorAll('.showcase-card').forEach(card => {
 				card.removeEventListener('click', handleCardClick);
 			})
 
-			const lastProduct = oldCocktail.querySelector('.product--visible');
+			const lastProduct = oldCocktail.querySelector('.product--visible') || oldCocktail;
 			if (lastProduct) {
 				transitionTiming = 1200;
 				lastProduct.classList.remove('product--visible');
@@ -440,6 +447,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			initCard(card);
 		})
 
+		initCocktailTabs(ajaxCocktail);
+	}
+
+	function initCocktailTabs(ajaxCocktail) {
+		const zIndex = calcZIndex();
 		const tabs = ajaxCocktail.querySelectorAll('.cocktail__details-tabs-button');
 		tabs.forEach(tab => {
 			if (tab.classList.contains('cocktail__details-tabs-button--active')) return;
@@ -448,6 +460,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				spawnProduct(document.body.dataset.theme, zIndex);
 			})
 		})
-
 	}
+	window.initCocktailTabs = initCocktailTabs;
 });

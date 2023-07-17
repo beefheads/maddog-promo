@@ -6,7 +6,7 @@
   height: 100%;
 	pointer-events: none;
 
-	@media (max-width: $mobile-xl) {
+	@media (max-width: $laptop) {
 		height: 350vw;
 	}
 }
@@ -110,11 +110,11 @@
 
 	@media (max-width: $desktop-l) {
 		// top: 95vh;
-		top: 101.5rem;
+		top: 107.5rem;
 	}
 	@media (max-width: $desktop-m) {
 	// 	top: 97vh;
-		top: 103.5rem;
+		top: 106.5rem;
 	}
 	@media (max-width: $laptop-m) {
 		top: 90.5rem;
@@ -142,7 +142,7 @@
 	background-size: 120%;
 	background-position: -10rem -10rem;
 
-	@media (max-width: $mobile-xl) {
+	@media (max-width: $laptop) {
 		background-size: cover;
 		height: 350vw;
 	}

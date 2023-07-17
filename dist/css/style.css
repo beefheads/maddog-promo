@@ -4384,7 +4384,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 @media (min-width: 1101px) {
   .showcase--has-opened .showcase-card:not(.showcase-card--opened) .showcase-card__model {
     font-size: 2rem;
-    top: 83.3%;
+    top: 69.3%;
   }
 }
 @media (max-width: 1368px) and (min-width: 1101px) {
@@ -4406,28 +4406,28 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .showcase-card__model-name {
   transition: inherit;
-  transform: rotate(90deg) scale(-1) translate(-25rem, -26rem);
-  width: 60rem;
+  transform: rotate(90deg) scale(-1) translate(-39rem, -41rem);
+  width: 90rem;
   text-align: right;
 }
 @media (max-width: 1100px) {
   .showcase-card__model-name {
-    transform: rotate(90deg) scale(-1) translate(-26rem, -26.4rem);
+    transform: rotate(90deg) scale(-1) translate(-41rem, -41.4rem);
   }
 }
 @media (max-width: 992px) {
   .showcase-card__model-name {
-    transform: rotate(90deg) scale(-1) translate(-27rem, -27.4rem);
+    transform: rotate(90deg) scale(-1) translate(-42rem, -42.4rem);
   }
 }
 @media (max-width: 601px) {
   .showcase-card__model-name {
-    transform: rotate(90deg) scale(-1) translate(-28rem, -28.4rem);
+    transform: rotate(90deg) scale(-1) translate(-43rem, -43.4rem);
   }
 }
 
 .product__related .showcase-card__model-name {
-  transform: rotate(90deg) scale(-1) translate(-28.2rem, -28rem);
+  transform: rotate(90deg) scale(-1) translate(-43.2rem, -43rem);
 }
 
 .showcase--no-hover .showcase-card__model-name {
@@ -4442,13 +4442,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 @media (min-width: 1101px) {
   .showcase-card--opened .showcase-card__model-name {
-    transform: rotate(90deg) scale(-1) translate(-23rem, -25rem);
+    transform: rotate(90deg) scale(-1) translate(-38rem, -39rem);
   }
 }
 
 @media (min-width: 1101px) {
   .showcase--has-opened .showcase-card:not(.showcase-card--opened) .showcase-card__model-name {
-    transform: rotate(90deg) scale(-1) translate(20.4rem, -28.1rem);
+    transform: rotate(90deg) scale(-1) translate(21.4rem, -43.1rem);
     text-align: left;
   }
 }
@@ -4461,7 +4461,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   transform: scaleX(0);
   max-width: 43.5rem;
 }
-@media (max-width: 601px) {
+@media (max-width: 1100px) {
   .showcase-card__info {
     position: absolute;
     left: 0;
@@ -4691,7 +4691,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   height: 100%;
   pointer-events: none;
 }
-@media (max-width: 601px) {
+@media (max-width: 1100px) {
   .slide-drop-container {
     height: 350vw;
   }
@@ -4795,12 +4795,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 @media (max-width: 1800px) {
   .slide-drop__content {
-    top: 101.5rem;
+    top: 107.5rem;
   }
 }
 @media (max-width: 1500px) {
   .slide-drop__content {
-    top: 103.5rem;
+    top: 106.5rem;
   }
 }
 @media (max-width: 1368px) {
@@ -4831,7 +4831,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   background-size: 120%;
   background-position: -10rem -10rem;
 }
-@media (max-width: 601px) {
+@media (max-width: 1100px) {
   .slide-drop__blink,
 .slide-drop__paper {
     background-size: cover;

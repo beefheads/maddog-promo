@@ -192,7 +192,7 @@
 .showcase--has-opened .showcase-card:not(.showcase-card--opened) .showcase-card__model {
 	@media (min-width: $laptop + 1) {
 		font-size: 2rem;
-		top: 83.3%;
+		top: 69.3%;
 	}
 
 	@media (max-width: $laptop-m) and (min-width: $laptop + 1) {
@@ -212,25 +212,29 @@
 
 .showcase-card__model-name {
 	transition: inherit;
-	transform: rotate(90deg) scale(-1) translate(-25rem, -26rem);
-	width: 60rem;
+	transform: rotate(90deg) scale(-1) translate(-39rem, -41rem);
+	width: 90rem;
 	text-align: right;
 
 	@media (max-width: $laptop) {
-		transform: rotate(90deg) scale(-1) translate(-26rem, -26.4rem);
+		// transform: rotate(90deg) scale(-1) translate(-26rem, -26.4rem);
+		transform: rotate(90deg) scale(-1) translate(-41rem, -41.4rem);
 	}
 
 	@media (max-width: $tablet) {
-		transform: rotate(90deg) scale(-1) translate(-27rem, -27.4rem);
+		// transform: rotate(90deg) scale(-1) translate(-27rem, -27.4rem);
+		transform: rotate(90deg) scale(-1) translate(-42rem, -42.4rem);
 	}
 
 	@media (max-width: $mobile-xl) {
-		transform: rotate(90deg) scale(-1) translate(-28rem, -28.4rem);
+		// transform: rotate(90deg) scale(-1) translate(-28rem, -28.4rem);
+		transform: rotate(90deg) scale(-1) translate(-43rem, -43.4rem);
 	}
 }
 
 		.product__related .showcase-card__model-name {
-			transform: rotate(90deg) scale(-1) translate(-28.2rem, -28rem);
+			// transform: rotate(90deg) scale(-1) translate(-28.2rem, -28rem);
+			transform: rotate(90deg) scale(-1) translate(-43.2rem, -43rem);
 		}
 
 		.showcase--no-hover .showcase-card__model-name {
@@ -244,13 +248,15 @@
 
 .showcase-card--opened .showcase-card__model-name {
 	@media (min-width: $laptop + 1) {
-		transform: rotate(90deg) scale(-1) translate(-23rem, -25rem);
+		// transform: rotate(90deg) scale(-1) translate(-33rem, -35rem);
+		transform: rotate(90deg) scale(-1) translate(-38rem, -39rem);
 	}
 }
 
 .showcase--has-opened .showcase-card:not(.showcase-card--opened) .showcase-card__model-name {
 	@media (min-width: $laptop + 1) {
-		transform: rotate(90deg) scale(-1) translate(20.4rem, -28.1rem);
+		// transform: rotate(90deg) scale(-1) translate(20.4rem, -28.1rem);
+		transform: rotate(90deg) scale(-1) translate(21.4rem, -43.1rem);
 		text-align: left;
 	}
 }
@@ -263,7 +269,7 @@
 	transform: scaleX(0);
 	max-width: 43.5rem;
 
-	@media (max-width: $mobile-xl) {
+	@media (max-width: $laptop) {
 		position: absolute;
 		left: 0;
 		top: 0;
