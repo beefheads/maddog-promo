@@ -25,44 +25,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		growDrop(currentCard);
 	}
 
-	document.body.addEventListener('drop-growed', (e) => {
-		document.body.classList.remove('page-home');
-		hideProductList();
-		document.body.dataset.theme = e.detail.theme;
-
-		const zIndex = 5 + [...document.querySelectorAll('.slide-drop')].length;
-
-		// хотел сделать, чтобы предыдущий продукт убирался
-		spawnProduct(e.detail.theme, zIndex);
-		spawnDrop(zIndex + 1);
-	})
-
 	function hideProductList() {
 		if (!document.querySelector('main > .section.showcase')) return;
 		document.querySelector('main > .section.showcase').classList.add('is-hidden');
 	}
 
-	function getLastDrop() {
-
-	}
-
 	function growDrop(currentCard) {
 		const drop = document.querySelector('.slide-drop:last-child');
+		const theme = currentCard.dataset.theme
 
 		drop.classList.add(DROP_CLASSES.enter);
+		drop.dataset.theme = theme;
+
+		const footer = document.querySelector('.footer');
+		footer.classList.add('is-transparent')
 
 		setTimeout(() => {
 			drop.classList.add(DROP_CLASSES.active);
-		}, 1500);
 
-		const dropGrowed = new CustomEvent("drop-growed", {
-		  detail: {
-		  	theme: currentCard.dataset.theme,
-		  },
-		});
+			hideProductList();
+			document.body.classList.remove('page-home');
+			footer.classList.remove('is-transparent')
+		}, 1400);
+
 		setTimeout(() => {
-			document.body.dispatchEvent(dropGrowed);
-		}, 800)
+			const zIndex = 5 + [...document.querySelectorAll('.slide-drop')].length;
+			spawnProduct(theme, zIndex);
+			spawnDrop(zIndex + 1);
+			document.body.dataset.theme = theme;
+		}, 1000)
+
+
 	}
 
 	function spawnDrop(zIndex) {
@@ -79,12 +72,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		const dropContainer = document.querySelector('.slide-drop-container');
 
 		dropContainer.innerHTML += drop;
+
 	}
 
 	function initCard(card) {
 		if (card.classList.contains(CARDS_CLASSES.ajaxInited)) return;
 
 		card.addEventListener('click', handleCardClick);
+		const drop = document.querySelector('.slide-drop-container .slide-drop:last-child');
+		card.addEventListener('mouseover', () => {
+			drop.dataset.theme = card.dataset.theme;
+		});
+		card.addEventListener('mouseleave', () => {
+			// drop.removeAttribute('data-theme');
+		})
 
 		const button = card.querySelector('.showcase-card__button')
 		button.addEventListener('click', (e) => {
@@ -94,10 +95,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		card.classList.add(CARDS_CLASSES.ajaxInited);
 	}
 
-	function spawnProduct(productName, zIndex = 5) {
+	function getProductSection(productName) {
 		if (typeof window.products[productName] == 'undefined') {
 			console.warn(`No such product "${productName}"`);
-			return;
+			return false;
 		}
 		const {title, desc, related} = window.products[productName];
 
@@ -179,11 +180,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			</section>
 		`;
 
+		return productSection;
+	}
+
+	function spawnProduct(productName, zIndex = 5) {
+		const productSection = getProductSection(productName);
+		if (!productSection) return;
+
+		const oldProduct = document.querySelector('.js_product');
+		if (oldProduct) {
+			oldProduct.querySelectorAll('.showcase-card').forEach(card => {
+				card.removeEventListener('click', handleCardClick);
+			})
+			oldProduct.remove();
+		}
+
 		const ajaxProduct = document.createElement('div');
 		ajaxProduct.classList.add('js_product', 'js_product--inited');
 		ajaxProduct.innerHTML = productSection;
 		ajaxProduct.style.zIndex = zIndex;
 		document.querySelector('main').append(ajaxProduct);
+
+		setTimeout(() => {
+			ajaxProduct.querySelector('.product').classList.add('product--visible');
+		}, 100)
 
 		const miniCards = ajaxProduct.querySelectorAll('.showcase-card');
 		miniCards.forEach(card => {
@@ -304,5 +324,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		document.querySelector('main').innerHTML += productSection;
 	}
+
+
+	/*
+
+		1. Клик по карточке
+			1. Рост первой капли
+			2. Спавн новой капли
+			3. Тайминг: капля выросла
+				1. Убрать старый товар
+				2. Добавить новый товар
+
+	*/
 
 });

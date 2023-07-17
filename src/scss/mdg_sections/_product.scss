@@ -8,6 +8,7 @@
 	margin-bottom: -25rem;
 	position: relative;
 	z-index: 6;
+	overflow: hidden;
 
 	@media (max-width: $laptop) {
 		margin-bottom: 0;
@@ -31,6 +32,17 @@
 		row-gap: 5rem;
 	}
 }
+
+.product__details {
+	opacity: 0;
+	transform: translateX(30rem);
+	transition: all 0.8s var(--tr-jolly-enter);
+}
+.product--visible .product__details {
+	transform: translateX(0);
+	opacity: 1;
+}
+
 
 .product__details-tabs {
 	display: flex;
@@ -177,7 +189,15 @@
 
 .product__hero {
 	position: relative;
+	opacity: 0;
+	transform: translateX(-30rem);
+	transition: all 0.8s var(--tr-jolly-enter);
 }
+
+	.product--visible .product__hero {
+		opacity: 1;
+		transform: translateX(0);
+	}
 
 .product__hero-name {
 	color: var(--fg-active);
