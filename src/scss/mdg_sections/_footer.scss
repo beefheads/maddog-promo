@@ -20,14 +20,15 @@
 	max-width: 95.8rem;
 	width: 100%;
 	margin-bottom: 4.3rem;
-	opacity: 0.2;
+	opacity: 1;
 	transition: var(--tr-regular);
-	filter: invert(1);
 }
 
 [data-theme]:not(.page-home) .footer__legal-media {
-	filter: none;
-	opacity: 0.5;
+	// filter: none;
+	// opacity: 0.5;
+	// filter: invert(1);
+	mix-blend-mode: difference;
 }
 
 .footer__legal-media-pic {
@@ -69,4 +70,10 @@
 
 .footer__legal-credits a {
 	border-bottom: 0.1rem solid;
+}
+
+.footer__privacy {
+	border-bottom: 0.1rem solid;
+  line-height: 0.8;
+  margin-bottom: 0.5em;
 }

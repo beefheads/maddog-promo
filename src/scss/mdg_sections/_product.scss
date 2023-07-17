@@ -36,7 +36,7 @@
 .product__details {
 	opacity: 0;
 	transform: translateX(30rem);
-	transition: all 0.8s var(--tr-jolly-enter);
+	transition: all 0.3s var(--tr-jolly-enter);
 }
 .product--visible .product__details {
 	transform: translateX(0);
@@ -90,6 +90,7 @@
 
 .product__details-tabs-button {
   opacity: 0.2;
+  --button-fg: var(--fg);
 	@media (min-width: $laptop + 1) {
 		font-size: 3.2rem;
 		padding: 4rem 6rem;
@@ -330,4 +331,9 @@
 	@media (max-width: $laptop) {
 		display: none;
 	}
+}
+
+[data-theme="raw"] .product__details-tabs-button:not(.product__details-tabs-button--active) {
+	opacity: 1;
+	color: rgba(35, 0, 92, 0.2);
 }

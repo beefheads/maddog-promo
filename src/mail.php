@@ -13,7 +13,7 @@ foreach ($_POST as $key => $value) {
 $message .= '</body></html>';
 
 // $email_to = 'boffeechane@gmail.com';
-$email_to = 'betails@yandex.by';
+$email_to = 'admin@maddog.by';
 $email_from = 'info@maddog.by';
 $email_subject = "maddog.by — заявка";
 
