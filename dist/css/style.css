@@ -4691,6 +4691,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   height: 100%;
   pointer-events: none;
 }
+@media (max-width: 601px) {
+  .slide-drop-container {
+    height: 350vw;
+  }
+}
 
 .slide-drop {
   --drop-color: #fff;
@@ -4830,6 +4835,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   .slide-drop__blink,
 .slide-drop__paper {
     background-size: cover;
+    height: 350vw;
   }
 }
 
