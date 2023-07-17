@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Коктейли</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20230717114732">
+    <link rel="stylesheet" href="./css/style.css?_v=20230717131543">
 
     <!-- Отключить автодетект телефонов -->
     <meta name="format-detection" content="telephone=no">
@@ -201,6 +201,7 @@
         'raw',
         'mango',
       ],
+      'cocktail': 'love-me-love'
     },
     'berry': {
       'className': '',
@@ -212,6 +213,7 @@
         'raw',
         'mango',
       ],
+      'cocktail': 'full-zen'
     },
     'raw': {
       'className': '',
@@ -223,6 +225,7 @@
         'berry',
         'mango',
       ],
+      'cocktail': 'kaipiroska'
     },
     'mango': {
       'className': '',
@@ -234,9 +237,127 @@
         'berry',
         'raw',
       ],
+      'cocktail': 'this-life'
     },
   }
+
   window.cocktails = {
+    "love-me-love": {
+      "className": "",
+      "img": "love-me-love",
+      "theme": "citrus",
+      "title": "Люби меня люби",
+      "volume": [
+        '40 мл',
+        '25 мл',
+        '15 мл',
+        '',
+      ],
+      "ingridients": [
+        'водка Mad Dog Citrus + <br>листья кафрского лайма',
+        'сок лимона',
+        'пюре юдзу',
+        'лёд',
+      ],
+      "steps": [
+        'Сделать настойку водки Mad Dog Citrus с листьями кафрского лайма, из расчета 5 грамм на 500 мл водки.',
+        'Взбить все ингредиенты в шейкере, перелить в охлажденный бокал со льдом.',
+        'Украсить свежими листьями кафрского лайма.',
+      ],
+      "related": [
+        "full-zen",
+        "kaipiroska",
+        "this-life",
+      ]
+   },
+    "full-zen": {
+      "className": "",
+      "img": "full-zen",
+      "theme": "berry",
+      "title": "Полный дзен",
+      "volume": [
+        '40 мл',
+        '25 мл',
+        '15 мл',
+        '',
+      ],
+      "ingridients": [
+        'водка Mad Dog Cranberry + саган дайля',
+        'сок лимона',
+        'клюквенный сироп',
+        'лёд',
+      ],
+      "steps": [
+        'Сделать настойку водки Mad Dog Cranberry с чаем саган дайля, из расчета 4 грамма на 500 мл водки.',
+        'Взбить все ингредиенты в шейкере, перелить в охлажденный бокал со льдом.',
+        'Украсить ягодами клюквы.',
+      ],
+      "related": [
+        "love-me-love",
+        "kaipiroska",
+        "this-life",
+      ]
+
+    },
+    "kaipiroska": {
+      "className": "",
+      "img": "kaipiroska",
+      "theme": "raw",
+      "title": "Кайпироска",
+      "volume": [
+        '40 мл',
+        '25 мл',
+        '15 мл',
+        '',
+      ],
+      "ingridients": [
+        'водка Mad Dog',
+        'сок лайма',
+        'сахарный сироп',
+        'лёд',
+      ],
+      "steps": [
+        'Смешать все ингредиенты в бокале с дробленым льдом.',
+        'Украсить долькой сочного лайма.',
+      ],
+      "hide_ice": true,
+      "related": [
+        "love-me-love",
+        "full-zen",
+        "this-life",
+      ],
+    },
+    "this-life": {
+      "className": "",
+      "img": "this-life",
+      "theme": "mango",
+      "title": "Такая лайф",
+      "volume": [
+        '40 мл',
+        '25 мл',
+        '15 мл',
+        '10мл',
+        '',
+      ],
+      "ingridients": [
+        'водка Mad Dog Mango + чили',
+        'сок лайма',
+        'сироп манго',
+        'пюре манго',
+        'лёд',
+      ],
+      "steps": [
+        'Сделать настойку водки Mad Dog Манго с перцем чили, из расчета 1/2 стручка на 500 мл водки.',
+        'Взбить все ингредиенты в шейкере, перелить в охлажденный бокал со льдом.',
+        'Украсить крастой из соли и специй',
+      ],
+      "related": [
+        "love-me-love",
+        "full-zen",
+        "kaipiroska",
+      ]
+    }
+    
   }
 </script>
 
@@ -273,6 +394,6 @@
   </div>
 </section>
 
-    <script src="./js/index.min.js?_v=20230717114732"></script>
+    <script src="./js/index.min.js?_v=20230717131543"></script>
   </body>
 </html>

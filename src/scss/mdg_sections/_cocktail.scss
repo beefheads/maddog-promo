@@ -4,6 +4,7 @@
 	margin-bottom: -25rem;
 	position: relative;
 	z-index: 6;
+	overflow: hidden;
 
 	@media (max-width: $laptop) {
 		margin-bottom: 0;
@@ -26,6 +27,16 @@
 		grid-template-columns: 100%;
 		row-gap: 5rem;
 	}
+}
+
+.cocktail__details {
+	opacity: 0;
+	transform: translateX(30rem);
+	transition: all 0.8s var(--tr-jolly-enter);
+}
+.cocktail--visible .cocktail__details {
+	transform: translateX(0);
+	opacity: 1;
 }
 
 .cocktail__details-tabs {
@@ -166,6 +177,13 @@
 
 .cocktail__hero {
 	position: relative;
+	opacity: 0;
+	transform: translateX(-30rem);
+	transition: all 0.8s var(--tr-jolly-enter);
+}
+.cocktail--visible .cocktail__hero {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .cocktail__hero-name {

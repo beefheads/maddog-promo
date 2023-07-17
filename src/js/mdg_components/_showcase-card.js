@@ -50,7 +50,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		setTimeout(() => {
 			const zIndex = 5 + [...document.querySelectorAll('.slide-drop')].length;
-			spawnProduct(theme, zIndex);
+
+			if (currentCard.classList.contains('showcase-card--cocktail')) {
+				const cocktail = window.products[theme].cocktail;
+				spawnCocktail(cocktail, zIndex);
+			} else {
+				spawnProduct(theme, zIndex);
+			}
+
 			spawnDrop(zIndex + 1);
 			document.body.dataset.theme = theme;
 		}, 1000)
@@ -242,31 +249,67 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		return productCard;
 	}
 
-	function spawnCocktail() {
-		const cocktail = `
-			<section class="section cocktail cocktail--@@theme">
+	function getCocktailCard(cocktailName) {
+		const {className, title, theme, img} = window.cocktails[cocktailName];
+
+		let cocktailCard = `
+			<article class="showcase-card showcase-card--cocktail ${className}" data-theme="${theme}">
+			  <div class="showcase-card__body">
+			    <h3 class="showcase-card__model">
+			      <div class="showcase-card__model-name">${title}</div>
+			    </h3>
+			    <div class="showcase-card__media">
+			      <picture class="showcase-card__media-pic">
+			        <source srcset="./img/cocktails/${img}.webp" type="image/webp">
+			        <img src="./img/cocktails/${img}.jpg" alt="MAD DOG VODKA ${title}" class="showcase-card__media-img">
+			      </picture>
+			    </div>
+			      <div class="showcase-card__info">
+			        <div class="showcase-card__buttons">
+			          <a href="${img}.html" class="showcase-card__button button-paper">
+			            <span class="button__text">УЗНАТЬ БОЛЬШЕ</span>
+			            <span class="button__bg"></span>
+			          </a>
+			        </div>
+			      </div>
+			  </div>
+			</article>`;
+					
+		return cocktailCard;
+	}
+
+	function getCocktailSection(cocktailName) {
+		if (typeof window.cocktails[cocktailName] == 'undefined') {
+			console.warn(`No such cocktail "${cocktailName}"`);
+			return false;
+		}
+		const {title, img, theme, hide_ice, related, steps, ingridients, volume} = window.cocktails[cocktailName];
+		let cocktail = `
+			<section class="section cocktail cocktail--${theme}">
 			  <div class="container cocktail__container">
 			    <div class="cocktail__hero">
 			      <p class="cocktail__hero-name">
-			        <span class="cocktail__hero-name-text">@@model</span>
+			        <span class="cocktail__hero-name-text">${title}</span>
 			      </p>
 			      <div class="cocktail__media">
 			        <picture class="cocktail__media-pic">
-			          <source srcset="./img/cocktails/@@img.webp" type="image/webp">
-			          <img src="./img/cocktails/@@img.jpg" alt="MAD DOG VODKA @@model" class="cocktail__media-img">
+			          <source srcset="./img/cocktails/${img}.webp" type="image/webp">
+			          <img src="./img/cocktails/${img}.jpg" alt="MAD DOG VODKA ${title}" class="cocktail__media-img">
 			        </picture>
-			        <div class="cocktail__media-decor-1" style="background-image: url('./img/@@theme/@@theme.png');"></div>
-			        @@if (typeof hide_ice == 'undefined') {
-				        <div class="cocktail__media-decor-2" style="background-image: url('./img/@@theme/ice-1.png');"></div>
+			        <div class="cocktail__media-decor-1" style="background-image: url('./img/${theme}/${theme}.png');"></div>
+			        `
+			        if (typeof hide_ice == 'undefined') {
+				        cocktail += `<div class="cocktail__media-decor-2" style="background-image: url('./img/${theme}/ice-1.png');"></div>`
 			        }
-			        @@if (typeof hide_ice == 'undefined') {
-				        <div class="cocktail__media-decor-3" style="background-image: url('./img/@@theme/ice-2.png');"></div>
+			        if (typeof hide_ice == 'undefined') {
+				        cocktail += `<div class="cocktail__media-decor-3" style="background-image: url('./img/${theme}/ice-2.png');"></div>`
 			        }
+		cocktail += `
 			      </div>
 			    </div>
 			    <div class="cocktail__details">
 			      <div class="cocktail__details-tabs">
-			        <a href="@@theme.html" class="button-paper cocktail__details-tabs-button">
+			        <a href="${theme}.html" class="button-paper cocktail__details-tabs-button">
 			          <span class="button__text">ПРОДУКТЫ</span>
 			          <span class="button__bg"></span>
 			        </a>
@@ -277,7 +320,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			      </div>
 			      <h1 class="cocktail__title">
 			        <span class="section-text--bold">КОКТЕЙЛЬ</span><br>
-			        <span class="cocktail__title-model">@@model</span>
+			        <span class="cocktail__title-model">${title}</span>
 			      </h1>
 			      <div class="cocktail__desc">
 			        <div class="cocktail__ingridients">
@@ -285,36 +328,49 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			            Необходимые ингредиенты:
 			          </h3>
 			          <ul class="cocktail__ingridients-list">
-			            @@for (var i = 0; i < ingridients.length; i++) {
-			              <li class="cocktail__ingridients-item">
-			                <span class="section-text--bold">
-			                  volume[i]
-			                </span>
-			                ingridients[i]
-			              </li>
+			          `
+			            for (var i = 0; i < ingridients.length; i++) {
+			            	cocktail += `
+				              <li class="cocktail__ingridients-item">
+				                <span class="section-text--bold">
+					                ${volume[i]}
+				                </span>
+				                ${ingridients[i]}
+				              </li>
+			              `
 			            }
+	      cocktail +=`
 			          </ul>
 			        </div>
 			        <div class="cocktail__steps">
 			          <h3 class="cocktail__steps-title">Приготовление:</h3>
-			          <ol class="cocktail__steps-list">
-			            @@for (var i = 0; i < steps.length; i++) {
-			              <li class="cocktail__steps-item">steps[i]</li>
+			          <ol class="cocktail__steps-list">`
+			            for (var i = 0; i < steps.length; i++) {
+			              cocktail += `<li class="cocktail__steps-item">${steps[i]}</li>`
 			            }
-			          </ol>
+			  cocktail += `
+				        </ol>
 			        </div>
 			      </div>
 
 			      <section class="showcase product__related cocktail__related">
 			          <div class="runway showcase__runway">
 			            <div class="runway__shaft">
-			              <div class="runway__lift">
+			              <div class="runway__lift">`;
+
+											if (typeof related == 'object') {
+												related.forEach(relatedName => {
+													cocktail += getCocktailCard(relatedName);
+												});
+											}
+
+		cocktail += `
 			              </div>
 			            </div>
 			          </div>
 			      </section>
 
-			      <div class="cocktail__details-decor" style="background-image: url('./img/@@theme/ice-last.png');">
+			      <div class="cocktail__details-decor" style="background-image: url('./img/${theme}/ice-last.png');">
 			      </div>
 			    </div>
 			    
@@ -322,7 +378,38 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			</section>
 		`
 
-		document.querySelector('main').innerHTML += productSection;
+		return cocktail;
+	}
+
+	function spawnCocktail(cocktailName, zIndex) {
+		// document.querySelector('main').innerHTML += productSection;
+
+		const cocktailSection = getCocktailSection(cocktailName);
+		if (!cocktailSection) return;
+
+		const oldCocktail = document.querySelector('.js_product');
+		if (oldCocktail) {
+			oldCocktail.querySelectorAll('.showcase-card').forEach(card => {
+				card.removeEventListener('click', handleCardClick);
+			})
+			oldCocktail.remove();
+		}
+
+		const ajaxCocktail = document.createElement('div');
+		ajaxCocktail.classList.add('js_product', 'js_product--inited');
+		ajaxCocktail.innerHTML = cocktailSection;
+		ajaxCocktail.style.zIndex = zIndex;
+		document.querySelector('main').append(ajaxCocktail);
+
+		setTimeout(() => {
+			ajaxCocktail.querySelector('.cocktail').classList.add('cocktail--visible');
+		}, 100)
+
+		const miniCards = ajaxCocktail.querySelectorAll('.showcase-card');
+		miniCards.forEach(card => {
+			initCard(card);
+		})
+
 	}
 
 
