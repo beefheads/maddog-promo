@@ -57,6 +57,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "js-cookie": "^3.0.5",
-    "swiper": "^8.3.1"
+    "swiper": "^8.3.1",
+    "viewerjs": "^1.11.3"
   }
 }

@@ -1,6 +1,6 @@
 .modal {
-	background-color: var(--bg-card);
-	max-width: 47.2rem;
+	background-color: var(--bg-app);
+	max-width: 67.2rem;
 	padding-left: 5.3rem;
 	padding-right: 5.3rem;
 	padding-top: 4rem;
@@ -11,6 +11,7 @@
 	flex-direction: column;
 
 	@media (max-width: $mobile-xl) {
+		max-width: 30rem;
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
 		padding-top: 2rem;
@@ -78,14 +79,6 @@
 	--link-color: var(--c-text-regular);
 	// --link-color: var(--c-text-regular);
 }
-
-.b_modal__closer {
-	@media (max-width: $tablet) {
-		top: 2rem;
-		right: 2rem;
-	}
-}
-
 
 .modal--wide {
 	max-width: var(--w-container);

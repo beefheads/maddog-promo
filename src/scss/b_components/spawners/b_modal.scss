@@ -73,8 +73,8 @@
 
 .b_modal__closer {
   position: absolute;
-  top: 4rem;
-  right: 4rem;
+  top: 2rem;
+  right: 2rem;
   display: block;
   width: 2.5em;
   height: 2.5em;
@@ -92,7 +92,7 @@
 
 .b_modal__closer::before,
 .b_modal__closer::after {
-  --closer-color: rgba(222,222,222, 1);//#fff;
+  --closer-color: rgba(0,0,0, 1);//#fff;
   content: "";
   position: absolute;
   top: 44%;
@@ -132,7 +132,7 @@
 .b_modal--scrollable {
   padding-bottom: 0;
 }
-.b_modal--scrollable .b_modal__aligner  {
+.b_modal--scrollable._show .b_modal__aligner  {
   align-items: flex-start;
   overflow-x: hidden;
   overflow-y: auto;
