@@ -78,7 +78,7 @@
   --c-accent: #FFA9BE;
   --c-active: #FF6588;
   --bg-card: #FFA9BE;
-  --fg-active: #FFD9E2;
+  --fg-active: #FCE9EA;
   --fg: #462A04;
   --button-bg: url("../img/common/button-on-magenta.png");
 }
@@ -2481,7 +2481,7 @@ body._lock {
 }
 @media (max-width: 601px) {
   .showcase-card__model-name {
-    transform: rotate(90deg) scale(-1) translate(-43rem, -43.4rem);
+    transform: rotate(90deg) scale(-1) translate(-44rem, -43.4rem);
   }
 }
 
