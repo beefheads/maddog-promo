@@ -168,6 +168,8 @@
 	max-width: 81.4rem;
 	margin-top: auto;
 	margin-bottom: 3.4rem;
+	filter: invert(1);
+	-webkit-filter: invert(1);
 }
 .age-check__legal-media-pic {
 	display: block;

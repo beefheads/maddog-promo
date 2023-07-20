@@ -21,6 +21,7 @@ Fancybox.bind('[data-fancybox]', {
 /**
  * Маска телефона
  */
+/*
 import "../libs/inputmask.js";
 const telInputs = document.querySelectorAll('input[type="tel"]');
 telInputs.forEach(tel => {
@@ -31,6 +32,7 @@ telInputs.forEach(tel => {
 
   new Inputmask(maskOptions).mask(tel);
 })
+//*/
 
 const phones = document.querySelectorAll('a[href^="tel:"]');
 phones.forEach((phone) => {
@@ -39,15 +41,15 @@ phones.forEach((phone) => {
 import "../b_components/controls/copyclicker.js"
 
 
-import AOS from "aos";
-window.aos = AOS;
-window.aos.init({
-  offset: 50
-});
+// import AOS from "aos";
+// window.aos = AOS;
+// window.aos.init({
+//   offset: 50
+// });
 
-setTimeout(() => {
-  window.aos.refresh();
-}, 5000)
+// setTimeout(() => {
+//   window.aos.refresh();
+// }, 5000)
 
 import "./apple-helpers.js"
 import "./smooth-anchors.js"
